@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="Maker ESP32 1-Page Marketing Plan Infographic — Hari Malaysia Special Launch. Framework covering Prospect, Lead, and Customer stages.">
-<title>Maker ESP32 — 1-Page Marketing Plan</title>
+<meta name="description" content="Maker ESP32 Customer-Centred 1-Page Marketing Plan Infographic — Hari Malaysia Special Launch. Framework covering Prospect, Lead, and Customer stages.">
+<title>Maker ESP32 — Customer-Centred 1-Page Marketing Plan</title>
 <style>
 /* ── Design Tokens & Color Palette ── */
 :root {
@@ -49,7 +49,7 @@ body {
   background-color: var(--bg);
   color: var(--ink);
   font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
-  line-height: 1.4;
+  line-height: 1.38;
   -webkit-font-smoothing: antialiased;
 }
 h1, h2, h3, h4, p, ul { margin-top: 0; }
@@ -123,16 +123,21 @@ h1, h2, h3, h4, p, ul { margin-top: 0; }
   margin-bottom: 4px;
 }
 .header-title {
-  font-size: 1.6rem;
+  font-size: 1.55rem;
   font-weight: 900;
   color: var(--deep);
   margin-bottom: 4px;
 }
 .header-headline {
-  font-size: 1.05rem;
-  font-weight: 700;
+  font-size: 1.1rem;
+  font-weight: 800;
   color: var(--purple);
-  margin-bottom: 12px;
+  margin-bottom: 4px;
+}
+.header-subtext {
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin-bottom: 10px;
 }
 .header-objective {
   font-size: 0.82rem;
@@ -141,7 +146,7 @@ h1, h2, h3, h4, p, ul { margin-top: 0; }
   border-left: 3px solid var(--purple);
   padding: 8px 12px;
   border-radius: 0 6px 6px 0;
-  margin-bottom: 14px;
+  margin-bottom: 12px;
   font-weight: 600;
 }
 .chips-container {
@@ -172,7 +177,7 @@ h1, h2, h3, h4, p, ul { margin-top: 0; }
 
 .stage-row {
   display: grid;
-  grid-template-columns: 50px repeat(3, 1fr);
+  grid-template-columns: 46px repeat(3, 1fr);
   gap: 14px;
   align-items: stretch;
 }
@@ -186,7 +191,7 @@ h1, h2, h3, h4, p, ul { margin-top: 0; }
   letter-spacing: 0.15em;
   text-transform: uppercase;
   border-radius: var(--r-card);
-  padding: 12px 6px;
+  padding: 12px 4px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -205,17 +210,17 @@ h1, h2, h3, h4, p, ul { margin-top: 0; }
   box-shadow: var(--shadow);
   display: flex;
   flex-direction: column;
-  font-size: 0.78rem;
+  font-size: 0.77rem;
   color: var(--muted);
 }
 
 .box-header {
-  font-size: 0.9rem;
+  font-size: 0.88rem;
   font-weight: 800;
   color: var(--deep);
   border-bottom: 2px solid var(--soft-purple);
-  padding-bottom: 6px;
-  margin-bottom: 10px;
+  padding-bottom: 5px;
+  margin-bottom: 8px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -230,15 +235,15 @@ h1, h2, h3, h4, p, ul { margin-top: 0; }
 }
 
 .sub-heading {
-  font-size: 0.82rem;
+  font-size: 0.8rem;
   font-weight: 800;
   color: var(--ink);
-  margin: 10px 0 4px;
+  margin: 8px 0 4px;
 }
 .sub-heading:first-of-type { margin-top: 0; }
 
-.box-card ul { margin: 0 0 8px 0; padding-left: 14px; }
-.box-card li { margin-bottom: 3px; line-height: 1.35; }
+.box-card ul { margin: 0 0 6px 0; padding-left: 13px; }
+.box-card li { margin-bottom: 2px; line-height: 1.35; }
 
 .highlight-tag {
   background: var(--soft-purple);
@@ -246,22 +251,22 @@ h1, h2, h3, h4, p, ul { margin-top: 0; }
   padding: 6px 10px;
   border-radius: 6px;
   font-weight: 700;
-  font-size: 0.75rem;
+  font-size: 0.74rem;
   margin-top: auto;
 }
 
 .pillar-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 6px;
-  margin: 6px 0;
+  gap: 5px;
+  margin: 5px 0;
 }
 .pillar-mini {
   background: #f9fafb;
   border: 1px solid #f3f4f6;
   border-radius: 6px;
-  padding: 6px;
-  font-size: 0.72rem;
+  padding: 5px;
+  font-size: 0.71rem;
 }
 .pillar-mini-title { font-weight: 800; color: var(--purple); margin-bottom: 2px; }
 
@@ -271,9 +276,19 @@ h1, h2, h3, h4, p, ul { margin-top: 0; }
   border: 1px solid var(--line-blue);
   padding: 6px 10px;
   border-radius: 6px;
-  font-size: 0.74rem;
+  font-size: 0.73rem;
   font-weight: 700;
   margin-top: 6px;
+}
+
+.proof-note {
+  background: #fdf8f3;
+  border-left: 3px solid var(--purple);
+  padding: 6px 8px;
+  font-size: 0.7rem;
+  color: var(--muted);
+  border-radius: 0 4px 4px 0;
+  margin-top: 4px;
 }
 
 /* ── Footer Success Metrics ── */
@@ -285,7 +300,7 @@ h1, h2, h3, h4, p, ul { margin-top: 0; }
   box-shadow: var(--shadow);
 }
 .footer-metrics-title {
-  font-size: 0.95rem;
+  font-size: 0.92rem;
   font-weight: 800;
   color: var(--deep);
   margin-bottom: 12px;
@@ -296,16 +311,16 @@ h1, h2, h3, h4, p, ul { margin-top: 0; }
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 12px;
-  margin-bottom: 16px;
+  margin-bottom: 14px;
 }
 .metric-cat h4 {
-  font-size: 0.8rem;
+  font-size: 0.78rem;
   font-weight: 800;
   color: var(--purple);
   margin-bottom: 6px;
   text-transform: uppercase;
 }
-.metric-cat ul { margin: 0; padding-left: 14px; font-size: 0.75rem; color: var(--muted); }
+.metric-cat ul { margin: 0; padding-left: 13px; font-size: 0.74rem; color: var(--muted); }
 .metric-cat li { margin-bottom: 3px; }
 
 /* Accordion for Pending Items */
@@ -366,45 +381,47 @@ h1, h2, h3, h4, p, ul { margin-top: 0; }
 
 /* ── Print Rules (Exact 1 A4 Landscape Page Fit) ── */
 @media print {
-  @page { size: A4 landscape; margin: 5mm 6mm; }
-  body { background-color: #fff; color: #000; font-size: 6.8pt; line-height: 1.25; }
+  @page { size: A4 landscape; margin: 4mm 5mm; }
+  body { background-color: #fff; color: #000; font-size: 6.6pt; line-height: 1.22; }
   .app-container { max-width: 100%; padding: 0; margin: 0; }
   .navbar, .btn-print, .btn-back, .modal { display: none !important; }
   
   .header-card {
-    padding: 8px 12px; margin-bottom: 8px; grid-template-columns: 1fr 80px; gap: 10px;
+    padding: 6px 10px; margin-bottom: 6px; grid-template-columns: 1fr 75px; gap: 8px;
     border: 1px solid #ccc; box-shadow: none; page-break-inside: avoid;
   }
-  .header-title { font-size: 1.1rem; margin-bottom: 2px; }
-  .header-headline { font-size: 0.85rem; margin-bottom: 4px; }
-  .header-objective { padding: 4px 8px; margin-bottom: 6px; font-size: 0.68rem; }
-  .chip { padding: 2px 6px; font-size: 0.62rem; }
-  .header-img { max-width: 65px; }
+  .header-title { font-size: 1.05rem; margin-bottom: 2px; }
+  .header-headline { font-size: 0.82rem; margin-bottom: 2px; }
+  .header-subtext { font-size: 0.65rem; margin-bottom: 4px; }
+  .header-objective { padding: 3px 6px; margin-bottom: 4px; font-size: 0.64rem; }
+  .chip { padding: 1px 5px; font-size: 0.6rem; }
+  .header-img { max-width: 60px; }
 
-  .plan-grid { gap: 6px; margin-bottom: 8px; }
-  .stage-row { grid-template-columns: 24px repeat(3, 1fr) !important; gap: 6px; page-break-inside: avoid; }
-  .stage-label-vertical { font-size: 0.65rem; padding: 4px 2px; letter-spacing: 0.05em; }
+  .plan-grid { gap: 5px; margin-bottom: 6px; }
+  .stage-row { grid-template-columns: 22px repeat(3, 1fr) !important; gap: 5px; page-break-inside: avoid; }
+  .stage-label-vertical { font-size: 0.62rem; padding: 2px 1px; letter-spacing: 0.04em; }
   
-  .box-card { padding: 6px 8px; border: 1px solid #ccc; box-shadow: none; font-size: 0.65rem; }
-  .box-header { font-size: 0.72rem; padding-bottom: 3px; margin-bottom: 4px; border-bottom-width: 1px; }
-  .box-num { font-size: 0.6rem; padding: 1px 4px; }
-  .sub-heading { font-size: 0.68rem; margin: 4px 0 2px; }
-  .box-card ul { margin: 0 0 4px 0; padding-left: 10px; }
+  .box-card { padding: 5px 7px; border: 1px solid #ccc; box-shadow: none; font-size: 0.63rem; }
+  .box-header { font-size: 0.7rem; padding-bottom: 2px; margin-bottom: 3px; border-bottom-width: 1px; }
+  .box-num { font-size: 0.58rem; padding: 1px 3px; }
+  .sub-heading { font-size: 0.66rem; margin: 3px 0 1px; }
+  .box-card ul { margin: 0 0 3px 0; padding-left: 9px; }
   .box-card li { margin-bottom: 1px; }
-  .highlight-tag, .val-badge { padding: 3px 6px; font-size: 0.62rem; margin-top: 4px; }
-  .pillar-grid { gap: 3px; margin: 3px 0; }
-  .pillar-mini { padding: 3px; font-size: 0.6rem; }
+  .highlight-tag, .val-badge { padding: 2px 5px; font-size: 0.6rem; margin-top: 3px; }
+  .pillar-grid { gap: 2px; margin: 2px 0; }
+  .pillar-mini { padding: 2px 4px; font-size: 0.58rem; }
+  .proof-note { padding: 3px 5px; font-size: 0.58rem; margin-top: 3px; }
   
-  .footer-metrics-card { padding: 8px 12px; border: 1px solid #ccc; box-shadow: none; page-break-inside: avoid; }
-  .footer-metrics-title { font-size: 0.75rem; padding-bottom: 3px; margin-bottom: 6px; }
-  .metrics-grid { grid-template-columns: repeat(5, 1fr) !important; gap: 6px; margin-bottom: 6px; }
-  .metric-cat h4 { font-size: 0.65rem; margin-bottom: 3px; }
-  .metric-cat ul { padding-left: 10px; font-size: 0.6rem; }
+  .footer-metrics-card { padding: 6px 10px; border: 1px solid #ccc; box-shadow: none; page-break-inside: avoid; }
+  .footer-metrics-title { font-size: 0.72rem; padding-bottom: 2px; margin-bottom: 4px; }
+  .metrics-grid { grid-template-columns: repeat(5, 1fr) !important; gap: 5px; margin-bottom: 4px; }
+  .metric-cat h4 { font-size: 0.62rem; margin-bottom: 2px; }
+  .metric-cat ul { padding-left: 9px; font-size: 0.58rem; }
   
   .pending-accordion { border: 1px solid #ccc; background: #fff; }
-  .pending-header { padding: 4px 8px; font-size: 0.65rem; }
-  .pending-body { display: block !important; padding: 6px 8px; background: #fff; font-size: 0.6rem; }
-  .pending-grid { grid-template-columns: repeat(4, 1fr) !important; gap: 2px 8px; }
+  .pending-header { padding: 3px 6px; font-size: 0.62rem; }
+  .pending-body { display: block !important; padding: 4px 6px; background: #fff; font-size: 0.58rem; }
+  .pending-grid { grid-template-columns: repeat(4, 1fr) !important; gap: 1px 6px; }
 }
 </style>
 </head>
@@ -415,8 +432,8 @@ h1, h2, h3, h4, p, ul { margin-top: 0; }
   <!-- ── Navigation Bar ── -->
   <nav class="navbar">
     <div class="nav-left">
-      <a href="index.html" class="btn-back"> Back to Launch Dashboard</a>
-      <span style="font-weight: 800; color: var(--deep); font-size: 0.95rem;">Maker ESP32 <span>1-Page Marketing Plan</span></span>
+      <a href="index.html" class="btn-back">← Back to Launch Dashboard</a>
+      <span style="font-weight: 800; color: var(--deep); font-size: 0.95rem;">Maker ESP32 <span>Customer-Centred 1-Page Marketing Plan</span></span>
     </div>
     <button class="btn-print" onclick="window.print()">Print / Save PDF</button>
   </nav>
@@ -424,12 +441,13 @@ h1, h2, h3, h4, p, ul { margin-top: 0; }
   <!-- ── Header Section ── -->
   <header class="header-card">
     <div>
-      <div class="header-eyebrow">Hari Malaysia Special Launch · 1-Page Marketing Framework</div>
-      <h1 class="header-title">Maker ESP32 — 1-Page Marketing Plan</h1>
-      <div class="header-headline">Built for Malaysia’s Next Generation of Makers</div>
+      <div class="header-eyebrow">Hari Malaysia Special Launch · Customer-Centred 1-Page Framework</div>
+      <h1 class="header-title">Maker ESP32 — Customer-Centred 1-Page Marketing Plan</h1>
+      <div class="header-headline">Build, Learn and Prototype with Greater Confidence</div>
+      <div class="header-subtext">Maker ESP32 gives students, lecturers and makers a more convenient way to start projects, understand GPIO activity, troubleshoot code and connect external modules.</div>
       
       <div class="header-objective">
-        <strong>Primary Objective:</strong> Successfully transition existing NodeMCU ESP32 demand towards Cytron’s own quality-controlled, locally supported and learning-ready ESP32 platform.
+        <strong>Customer-Centred Objective:</strong> Help existing and new ESP32 users move from setup uncertainty and bare-board learning towards a clearer, more supported and learning-ready project experience.
       </div>
 
       <div class="chips-container">
@@ -453,31 +471,40 @@ h1, h2, h3, h4, p, ul { margin-top: 0; }
     <div class="stage-row">
       <div class="stage-label-vertical stage-before">
         <span>BEFORE</span>
-        <span style="font-size: 0.7rem; font-weight:700;">Prospect</span>
+        <span style="font-size: 0.68rem; font-weight:700;">Prospect</span>
       </div>
 
       <!-- Box 1: My Target Market -->
       <div class="box-card">
         <div class="box-header">
-          <span>My Target Market</span>
+          <span>My Target Market (Customer POV)</span>
           <span class="box-num">Box 1</span>
         </div>
 
-        <div class="sub-heading">Primary Audiences</div>
+        <div class="sub-heading">Tertiary Students</div>
         <ul>
-          <li><strong>Tertiary Students:</strong> Final Year Projects (FYP), IoT, Robotics, Sensor data-logging, Automation, Prototyping. <em>Needs:</em> Easy setup, reliable board, clear tutorials, affordable price.</li>
-          <li><strong>Lecturers &amp; Trainers:</strong> Lab kits, Electronics/IoT classes, Demonstrations, FYP supervision. <em>Needs:</em> Consistent hardware, repeatable code, local support.</li>
-          <li><strong>Makers &amp; Hobbyists:</strong> DIY smart home, Automation, Rapid prototyping. <em>Needs:</em> Easy module connections (Maker Port), familiar workflow.</li>
+          <li><strong>Goals:</strong> Complete FYP, build academic prototypes, IoT/robotics/automation systems, sensor data-logging, demonstrate working code.</li>
+          <li><strong>Worries:</strong> Wasting time troubleshooting board vs code, upload failures, driver confusion, wiring mistakes, deadline stress.</li>
+          <li><strong>Needs:</strong> Easy setup, visual GPIO feedback, reliable hardware, clear tutorials, familiar workflow, local support.</li>
         </ul>
 
-        <div class="sub-heading">Secondary Audiences</div>
+        <div class="sub-heading">Lecturers, Teachers &amp; Trainers</div>
         <ul>
-          <li>Existing NodeMCU users, University/Polytechnic labs, Engineering clubs, Educational resellers, Institutional purchasers.</li>
+          <li><strong>Goals:</strong> Teach embedded/IoT clearly, prepare repeatable labs, troubleshoot student code faster, consistent class hardware.</li>
+          <li><strong>Worries:</strong> Hardware &amp; driver variance between student units, lesson time lost to basic setup, lack of local teaching resources.</li>
+          <li><strong>Needs:</strong> Consistent specs, visual learning features, tested lab examples, clear docs, local support.</li>
+        </ul>
+
+        <div class="sub-heading">Makers &amp; Hobbyists</div>
+        <ul>
+          <li><strong>Goals:</strong> Build prototypes fast, connect sensors, DIY smart home/robotics, reuse existing ESP32 code.</li>
+          <li><strong>Worries:</strong> Setup time, loose Micro-USB ports, upload issues, extra breadboard wiring for simple tests.</li>
+          <li><strong>Needs:</strong> USB Type-C, Maker Port, built-in testing buttons/LEDs, reliable specs.</li>
         </ul>
 
         <div class="val-badge">
-          <strong>Market Validation:</strong> 5,249 units sold (Jul 2025–Jul 2026) · RM65,543.47 margin · RM121,927.87 sales · 4.9/5 rating (719 reviews).
-          <div style="font-size:0.68rem; font-weight:600; margin-top:2px; color:var(--muted);">Note: Existing NodeMCU demand proves Cytron does not need to create the market from zero.</div>
+          <strong>Market Validation:</strong> 5,249 NodeMCU units sold (Jul 2025–Jul 2026) · RM65.5K margin · RM121.9K sales · 4.9/5 rating (719 reviews).
+          <div style="font-size:0.67rem; font-weight:600; margin-top:2px; color:var(--muted);">Reframe: Thousands already use ESP32; Maker ESP32 gives them a more complete and supported experience.</div>
         </div>
       </div>
 
@@ -488,60 +515,56 @@ h1, h2, h3, h4, p, ul { margin-top: 0; }
           <span class="box-num">Box 2</span>
         </div>
 
-        <div class="sub-heading">Headline &amp; Core Positioning</div>
-        <p style="font-weight:700; color:var(--purple); margin-bottom:4px;">Built for Malaysia’s Next Generation of Makers</p>
-        <p style="margin-bottom:6px;">The familiar NodeMCU ESP32 experience, upgraded with Cytron-controlled quality, local support and learning-ready Maker features.</p>
+        <div class="sub-heading">Main Customer Message</div>
+        <p style="font-weight:800; color:var(--purple); margin-bottom:2px;">Spend more time building your project and less time troubleshooting the board.</p>
+        <p style="margin-bottom:6px; font-size:0.74rem;">Maker ESP32 combines the familiar ESP32 workflow with onboard tools that make learning, testing and debugging easier.</p>
 
-        <div class="sub-heading">4 Value Pillars</div>
-        <div class="pillar-grid">
-          <div class="pillar-mini">
-            <div class="pillar-mini-title">Quality</div>
-            Controlled design, specs &amp; components. Cytron testing.
-          </div>
-          <div class="pillar-mini">
-            <div class="pillar-mini-title">Compatibility</div>
-            NodeMCU form factor, Arduino IDE &amp; ESP-IDF support.
-          </div>
-          <div class="pillar-mini">
-            <div class="pillar-mini-title">Learning</div>
-            14 GPIO LEDs, User button, Buzzer + Mute, Maker Port.
-          </div>
-        </div>
+        <div class="sub-heading">Main Customer Benefits</div>
+        <ul>
+          <li><strong>Start Easily:</strong> USB Type-C, familiar NodeMCU form factor &amp; Arduino IDE / ESP-IDF workflow.</li>
+          <li><strong>Understand Project:</strong> 14 GPIO LEDs + RX/TX LEDs provide visual code execution feedback.</li>
+          <li><strong>Test Without Wiring:</strong> Built-in user button, passive buzzer &amp; mute switch onboard.</li>
+          <li><strong>Connect Conveniently:</strong> Maker Port (Qwiic / STEMMA QT / Grove compatibility).</li>
+          <li><strong>Supported Learning:</strong> Tested Cytron tutorials, example projects &amp; local support.</li>
+        </ul>
 
         <div class="val-badge" style="background:var(--soft-blue); color:var(--blue); border-color:var(--line-blue);">
-          <strong>Compliance Wording:</strong> Powered by an ESP32-WROOM-32E wireless module type-approved by SIRIM under Cytron Technologies. <em>(Approval applies to wireless module).</em>
+          <strong>SIRIM Proof:</strong> Powered by an ESP32-WROOM-32E wireless module type-approved by SIRIM under Cytron Technologies. <em>(Gives Malaysian institutions &amp; B2B purchasers strong procurement confidence).</em>
         </div>
 
-        <div class="highlight-tag" style="margin-top:6px;">
-          <strong>Conclusion:</strong> Maker ESP32 upgrades a proven platform into a product Cytron can control, improve and support.
+        <div class="proof-note">
+          <strong>Why trust this?</strong> Cytron-controlled specs, component testing, and local support reduce batch uncertainty.
         </div>
       </div>
 
       <!-- Box 3: The Media I Will Use -->
       <div class="box-card">
         <div class="box-header">
-          <span>The Media I Will Use to Reach Target Market</span>
+          <span>Where Customers Discover, Research &amp; Learn</span>
           <span class="box-num">Box 3</span>
         </div>
 
-        <div class="sub-heading">Channels Breakdown</div>
+        <div class="sub-heading">Where Customers Discover Ideas</div>
         <ul>
-          <li><strong>Owned Channels:</strong> Product page, Launch section, Cytron tutorials, Project articles, Email newsletter, Social media (YouTube, Facebook, Instagram, TikTok, Shorts), Telegram STEM/Maker groups.</li>
-          <li><strong>Education Channels:</strong> Universities, Polytechnics, STEM centres, Engineering clubs, FYP communities.</li>
-          <li><strong>Internal &amp; Commerce:</strong> Cytron online/offline stores, Sales, Education &amp; Support teams.</li>
+          <li>Social media (FB, IG, TikTok, Shorts), Telegram STEM/Maker groups, Uni communities, Engineering clubs, Student societies.</li>
         </ul>
 
-        <div class="sub-heading">Content Formats</div>
+        <div class="sub-heading">Where Customers Research &amp; Learn</div>
         <ul>
-          <li>Hari Malaysia teaser, Why Cytron created Maker ESP32 story, NodeMCU vs Maker ESP32 comparison, Feature graphics, Overview video, Short GPIO/USB-C/Buzzer demos, FYP &amp; Lecturer project showcases.</li>
+          <li>Product page, NodeMCU vs Maker ESP32 comparison, Overview video, Datasheet, Pinout diagram, Reviews, Cytron tutorial articles, FYP/IoT project guides.</li>
         </ul>
 
-        <div class="sub-heading">Campaign Phases Strip</div>
-        <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:4px; text-align:center; font-size:0.68rem; font-weight:800; margin-top:4px;">
-          <div style="background:var(--soft-purple); padding:4px; border-radius:4px; color:var(--purple);">1. Product Story</div>
-          <div style="background:var(--soft-purple); padding:4px; border-radius:4px; color:var(--purple);">2. Education</div>
-          <div style="background:var(--soft-purple); padding:4px; border-radius:4px; color:var(--purple);">3. Proof</div>
-          <div style="background:var(--soft-purple); padding:4px; border-radius:4px; color:var(--purple);">4. Launch</div>
+        <div class="sub-heading">Where Customers Ask Questions</div>
+        <ul>
+          <li>Telegram communities, Cytron support team, Education team, Product-page enquiry form, University outreach.</li>
+        </ul>
+
+        <div class="sub-heading">Customer Content Sequence</div>
+        <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:3px; text-align:center; font-size:0.66rem; font-weight:800; margin-top:4px;">
+          <div style="background:var(--soft-purple); padding:3px; border-radius:4px; color:var(--purple);">1. Familiar Problem</div>
+          <div style="background:var(--soft-purple); padding:3px; border-radius:4px; color:var(--purple);">2. Maker Solution</div>
+          <div style="background:var(--soft-purple); padding:3px; border-radius:4px; color:var(--purple);">3. Prove Compatibility</div>
+          <div style="background:var(--soft-purple); padding:3px; border-radius:4px; color:var(--purple);">4. Project Guide</div>
         </div>
       </div>
     </div>
@@ -550,85 +573,78 @@ h1, h2, h3, h4, p, ul { margin-top: 0; }
     <div class="stage-row">
       <div class="stage-label-vertical stage-during">
         <span>DURING</span>
-        <span style="font-size: 0.7rem; font-weight:700;">Lead</span>
+        <span style="font-size: 0.68rem; font-weight:700;">Lead</span>
       </div>
 
       <!-- Box 4: My Lead Capture System -->
       <div class="box-card">
         <div class="box-header">
-          <span>My Lead Capture System</span>
+          <span>My Lead Capture System (Customer Value)</span>
           <span class="box-num">Box 4</span>
         </div>
 
-        <div class="sub-heading">Lead Entry Points</div>
+        <div class="sub-heading">Customer Invitation</div>
+        <p style="font-weight:700; color:var(--purple); margin-bottom:4px;">"Tell us how you use ESP32, and we will share more relevant tutorials, project ideas and launch updates."</p>
+
+        <div class="sub-heading">Poll Question &amp; Options</div>
+        <p style="font-size:0.72rem; font-style:italic; margin-bottom:2px;">Anda biasanya menggunakan ESP32 untuk apa?</p>
         <ul>
-          <li>Notify Me at Launch form, Interest form, Telegram ESP32 polls, Newsletter signup, Tutorial &amp; Code downloads, QR codes at STEM events, Webinar registration.</li>
+          <li>FYP / Academic project · Programming/electronics · IoT monitoring · Robotics · Smart home · Data logging · Automation · Teaching · Prototyping.</li>
         </ul>
 
-        <div class="sub-heading">Survey &amp; Data Collected</div>
+        <div class="sub-heading">Value Exchange &amp; Tags</div>
         <ul>
-          <li><strong>Categories:</strong> Tertiary student, Lecturer/teacher, Maker, Engineer, Beginner.</li>
-          <li><strong>Project Types:</strong> FYP, Learning, IoT dashboards, Robotics, Smart home, Automation.</li>
-          <li><strong>Fields:</strong> Name, Email, Institution, ESP32 experience level, Preferred content.</li>
+          <li><strong>Value Given:</strong> Project tutorials, sample code, classroom/FYP guides, launch reminder.</li>
+          <li><strong>Tags:</strong> <code>Interest|MakerESP32</code> · <code>TA|Student</code> · <code>TA|Lecturer</code> · <code>Use Case|FYP</code> · <code>Use Case|IoT</code>.</li>
         </ul>
-
-        <div class="sub-heading">ActiveCampaign Tags</div>
-        <p style="font-size:0.72rem; color:var(--muted); margin-bottom:4px;">
-          <code>Interest|MakerESP32</code> · <code>TA|Student</code> · <code>TA|Lecturer</code> · <code>TA|Maker</code> · <code>Use Case|FYP</code> · <code>Use Case|IoT</code>
-        </p>
 
         <div class="highlight-tag" style="background:var(--soft-amber); color:#92400e;">
-          <strong>Objective:</strong> Convert anonymous users into segmented contacts receiving relevant launch content.
+          <strong>Principle:</strong> Helps customers receive information relevant to what they are actually building.
         </div>
       </div>
 
       <!-- Box 5: My Lead Nurturing System -->
       <div class="box-card">
         <div class="box-header">
-          <span>My Lead Nurturing System</span>
+          <span>Customer Decision Journey Nurturing</span>
           <span class="box-num">Box 5</span>
         </div>
 
-        <div class="sub-heading">5-Message Content Journey</div>
+        <div class="sub-heading">5-Step Nurturing Sequence</div>
         <ul>
-          <li><strong>Msg 1 (Story):</strong> <em>Why Cytron Created Its Own ESP32 Board</em> (Quality control &amp; supply ownership).</li>
-          <li><strong>Msg 2 (Problem):</strong> <em>Challenges Behind Generic ESP32 Boards</em> (USB port stress, drivers, upload errors).</li>
-          <li><strong>Msg 3 (Solution):</strong> <em>Familiar ESP32, Better Learning</em> (USB-C, 8MB flash, GPIO LEDs, Buzzer).</li>
-          <li><strong>Msg 4 (Proof):</strong> <em>See Maker ESP32 in Action</em> (Tutorials, IoT/FYP examples, lecturer evaluation).</li>
-          <li><strong>Msg 5 (Launch):</strong> <em>Maker ESP32 Launches This Hari Malaysia</em> (16 Sep 2026, RM39 RRP, offer CTA).</li>
-        </ul>
-
-        <div class="sub-heading">Segment Nurturing Focus</div>
-        <ul>
-          <li><strong>Students:</strong> FYP tutorials, faster troubleshooting, affordable prototyping.</li>
-          <li><strong>Lecturers:</strong> Classroom batch consistency, visual GPIO indicators, local support.</li>
-          <li><strong>Makers:</strong> Maker Port plug-and-play, built-in indicators, expansion.</li>
+          <li><strong>1. "Is this problem familiar?"</strong> (Upload fails, driver unclear, loose USB, code vs wiring doubt). <em>Goal: Feel understood.</em></li>
+          <li><strong>2. "A more visible way to learn"</strong> (14 GPIO LEDs, RX/TX LEDs, button, buzzer). <em>Goal: Show reduced uncertainty.</em></li>
+          <li><strong>3. "Can I use my existing knowledge?"</strong> (NodeMCU form factor, Arduino IDE/ESP-IDF, code compatibility). <em>Goal: Reduce switching anxiety.</em></li>
+          <li><strong>4. "Can this help my specific project?"</strong> (Segmented examples: FYP/IoT for students, Labs for lecturers, Smart home for makers). <em>Goal: Visualize board in project.</em></li>
+          <li><strong>5. "Everything you need to begin"</strong> (Product page, RM39 RRP, offer, guides, CTA). <em>Goal: Clear final buying doubt.</em></li>
         </ul>
       </div>
 
       <!-- Box 6: My Sales Conversion Strategy -->
       <div class="box-card">
         <div class="box-header">
-          <span>My Sales Conversion Strategy</span>
+          <span>Sales Conversion (Answering Buying Questions)</span>
           <span class="box-num">Box 6</span>
         </div>
 
-        <div class="sub-heading">Pricing &amp; Value Justification</div>
+        <div class="sub-heading">Customer Buying Questions Answered</div>
         <ul>
-          <li>NodeMCU price: RM29 vs <strong>Maker ESP32 RRP: RM39</strong> (~20% launch offer pending approval).</li>
-          <li><strong>Justification:</strong> USB-C, 8MB flash, 14 GPIO LEDs, RX/TX LEDs, User button, Buzzer + Mute, Maker Port, SIRIM module approval, Cytron tutorials.</li>
+          <li>What's better than NodeMCU? Can I use current code? Why RM39 vs RM29? Will it be easier to troubleshoot? Is it suitable for my project/institution?</li>
         </ul>
 
-        <div class="sub-heading">Product Page Conversion Assets</div>
+        <div class="sub-heading">RM10 Difference Value Reframing</div>
         <ul>
-          <li>Hari Malaysia hero, Spec comparison table, Datasheet, Pinout diagram, Driver guide, Tutorial collection, Local support channel, Shop Now &amp; Institutional enquiry CTAs.</li>
+          <li>RM29 NodeMCU vs <strong>RM39 Maker ESP32</strong> (~20% launch offer pending approval).</li>
+          <li><strong>Added Value:</strong> USB-C, 8MB flash, 14 GPIO LEDs, RX/TX LEDs, User button, Buzzer + Mute switch, Maker Port, SIRIM module approval, Cytron tutorials &amp; local support.</li>
         </ul>
 
-        <div class="sub-heading">Transition &amp; SKU Clarification</div>
-        <ul>
-          <li>~600 NodeMCU units remaining; sell concurrently until sold out; transition tutorials gradually.</li>
-          <li><em>SKU Note:</em> Maker ESP32 is product successor, not direct free warranty swap for NodeMCU.</li>
-        </ul>
+        <div class="val-badge" style="background:var(--soft-purple); color:var(--purple); border-color:rgba(108,42,163,0.2);">
+          <strong>Main Conversion Message:</strong> Pay slightly more for a more complete, visible and supported ESP32 project experience.
+        </div>
+
+        <div class="proof-note" style="margin-top:4px;">
+          <strong>Reassurance:</strong> Maker ESP32 is familiar enough for existing NodeMCU users while adding built-in features for learning and debugging. ~600 NodeMCU units sell concurrently until transition finishes.
+        </div>
       </div>
     </div>
 
@@ -636,84 +652,85 @@ h1, h2, h3, h4, p, ul { margin-top: 0; }
     <div class="stage-row">
       <div class="stage-label-vertical stage-after">
         <span>AFTER</span>
-        <span style="font-size: 0.7rem; font-weight:700;">Customer</span>
+        <span style="font-size: 0.68rem; font-weight:700;">Customer</span>
       </div>
 
       <!-- Box 7: Deliver World-Class Experience -->
       <div class="box-card">
         <div class="box-header">
-          <span>How I Deliver World-Class Experience</span>
+          <span>First-Use Customer Onboarding</span>
           <span class="box-num">Box 7</span>
         </div>
 
-        <div class="sub-heading">Onboarding Resources</div>
-        <ul>
-          <li>Welcome email, Getting-started guide, Arduino IDE setup, Driver guide, Pinout diagram, GPIO LED / Button / Buzzer / Maker Port example code.</li>
-        </ul>
+        <div class="sub-heading">Customer First-Hour Goal</div>
+        <p style="margin-bottom:4px; font-weight:600; color:var(--deep);">Open package, connect board, upload first code, and understand what happens without setup confusion.</p>
 
-        <div class="sub-heading">Tutorial Migration</div>
+        <div class="sub-heading">5-Step Onboarding Journey</div>
         <ul>
-          <li>Audit existing NodeMCU tutorials, confirm code compatibility, update wiring images gradually, support legacy NodeMCU projects.</li>
-        </ul>
-
-        <div class="sub-heading">Support &amp; Feedback Loop</div>
-        <ul>
-          <li>Dedicated support for drivers, USB cables, upload procedures, COM ports.</li>
-          <li>Post-purchase feedback email, track early returns, update FAQ and troubleshooting guides.</li>
+          <li><strong>1. Connect:</strong> USB Type-C guidance, cable info, driver instructions.</li>
+          <li><strong>2. Install:</strong> Arduino IDE setup, board package, correct board selection, COM port.</li>
+          <li><strong>3. Upload:</strong> Simple upload example, boot-button guidance, upload troubleshooting.</li>
+          <li><strong>4. Observe:</strong> GPIO LED example, RX/TX activity explanation, button/buzzer test.</li>
+          <li><strong>5. Build:</strong> Maker Port guide, sensor &amp; IoT project examples.</li>
         </ul>
 
         <div class="highlight-tag" style="background:var(--soft-green); color:var(--green);">
-          <strong>Experience Promise:</strong> Unbox to running first project with clear guidance and minimal friction.
+          <strong>Promise:</strong> Spend your first hour learning what the board can do, not searching for missing setup info.
         </div>
       </div>
 
       <!-- Box 8: Increase Customer Lifetime Value -->
       <div class="box-card">
         <div class="box-header">
-          <span>How I Increase Customer Lifetime Value</span>
+          <span>Customer Project &amp; Learning Progress</span>
           <span class="box-num">Box 8</span>
         </div>
 
-        <div class="sub-heading">Future Bundles &amp; Packs</div>
-        <ul>
-          <li>Maker ESP32 IoT starter bundle, FYP development bundle, Robotics/Motor kit, Smart home pack, Lecturer classroom multipack, Maker Port sensor pack.</li>
-        </ul>
-
-        <div class="sub-heading">Cross-Sell Categories</div>
-        <ul>
-          <li>Sensors, Displays, Maker Port / Qwiic / STEMMA QT modules, Motor drivers, Power supplies, Enclosures, Breadboards, Cables.</li>
-        </ul>
-
         <div class="sub-heading">Project Learning Path</div>
-        <p style="font-size:0.72rem; color:var(--muted);">
-          Digital I/O → User Button &amp; Buzzer → Sensors → Wi-Fi &amp; IoT Dashboard → Robotics → FYP Application.
+        <p style="font-size:0.71rem; color:var(--muted); margin-bottom:4px;">
+          First Upload → Digital I/O → Button &amp; Buzzer → Sensors → Wi-Fi &amp; IoT → Robotics → FYP Application.
         </p>
 
-        <div class="highlight-tag" style="background:var(--soft-green); color:var(--green);">
-          <strong>Objective:</strong> Turn single board sale into an ongoing hardware and learning journey.
+        <div class="sub-heading">Customer-Centred Bundles</div>
+        <ul>
+          <li><em>Start Learning ESP32</em> · <em>Build Your First IoT Project</em> · <em>Final Year Project Starter</em> · <em>Classroom ESP32 Pack</em> · <em>Robotics Prototype Pack</em> · <em>Sensor &amp; Data-Logging Pack</em>.</li>
+        </ul>
+
+        <div class="sub-heading">Next Steps by Segment</div>
+        <ul>
+          <li><strong>Students:</strong> FYP tutorials, sensor kits, displays, IoT modules.</li>
+          <li><strong>Lecturers:</strong> Classroom packs, lab activity modules, teaching plans.</li>
+          <li><strong>Makers:</strong> Maker Port modules, smart home gear, motor drivers.</li>
+        </ul>
+
+        <div class="highlight-tag" style="background:var(--soft-green); color:var(--green); margin-top:auto;">
+          <strong>Objective:</strong> Do not just sell another component—help customers complete the next stage of their project.
         </div>
       </div>
 
       <!-- Box 9: Orchestrate & Stimulate Referrals -->
       <div class="box-card">
         <div class="box-header">
-          <span>How I Orchestrate &amp; Stimulate Referrals</span>
+          <span>Project Sharing, Pride &amp; Advocacy</span>
           <span class="box-num">Box 9</span>
         </div>
 
-        <div class="sub-heading">Project Sharing &amp; Content</div>
+        <div class="sub-heading">Why Customers Share</div>
         <ul>
-          <li>Invite students/makers to share FYPs, IoT projects, robotics. Feature selected projects on Cytron social media, tutorials &amp; Hari Malaysia showcase.</li>
+          <li>Completed working project, help other students, community recognition, showcase FYP or classroom innovation.</li>
         </ul>
 
-        <div class="sub-heading">Review &amp; Community Strategy</div>
+        <div class="sub-heading">Referral Experience &amp; Recognition</div>
         <ul>
-          <li>Post-purchase review requests after first project success or lab milestone.</li>
-          <li>Encourage tutorial sharing in Telegram groups, university engineering clubs, lecturer advocate networks.</li>
+          <li>Share photo/video, submit FYP/classroom activity. Selected projects featured on Cytron social media, tutorials &amp; Hari Malaysia maker showcase. Credit creator &amp; institution.</li>
         </ul>
 
         <div class="val-badge" style="background:var(--soft-green); color:var(--green); border-color:var(--line-green);">
-          <strong>Referral Call to Action:</strong> <em>"Built something with Maker ESP32? Share your project and help inspire Malaysia’s next generation of makers."</em>
+          <strong>Referral Call to Action:</strong> <em>"Built something with Maker ESP32? Share your project and inspire the next person to start building."</em>
+        </div>
+
+        <div class="highlight-tag" style="background:var(--soft-green); color:var(--green); margin-top:4px;">
+          <strong>Community Objective:</strong> Turn customers from product users into project contributors, peer supporters and advocates.
         </div>
       </div>
     </div>
@@ -722,61 +739,61 @@ h1, h2, h3, h4, p, ul { margin-top: 0; }
 
   <!-- ── Footer Success Metrics & Pending Items ── -->
   <footer class="footer-metrics-card">
-    <div class="footer-metrics-title">Campaign Success Metrics &amp; Key Performance Indicators</div>
+    <div class="footer-metrics-title">Campaign Success Metrics (Customer POV &amp; Commercial KPIs)</div>
     
     <div class="metrics-grid">
       <div class="metric-cat">
-        <h4>1. Awareness</h4>
+        <h4>1. Understanding</h4>
         <ul>
-          <li>Campaign reach</li>
-          <li>Social impressions</li>
-          <li>Video views</li>
-          <li>Tutorial visits</li>
-          <li>Telegram poll responses</li>
+          <li>% understanding Maker advantages</li>
+          <li>Product-comparison views</li>
+          <li>FAQ interactions</li>
+          <li>Tutorial completion rate</li>
+          <li>Video watch-through rate</li>
         </ul>
       </div>
 
       <div class="metric-cat">
-        <h4>2. Engagement</h4>
-        <ul>
-          <li>Social engagement rate</li>
-          <li>Video completion rate</li>
-          <li>Newsletter open/click</li>
-          <li>Comparison interactions</li>
-          <li>Comments &amp; questions</li>
-        </ul>
-      </div>
-
-      <div class="metric-cat">
-        <h4>3. Lead Gen</h4>
-        <ul>
-          <li>Notify Me signups</li>
-          <li>Tagged contacts</li>
-          <li>Tutorial downloads</li>
-          <li>Institutional enquiries</li>
-          <li>University leads</li>
-        </ul>
-      </div>
-
-      <div class="metric-cat">
-        <h4>4. Conversion</h4>
+        <h4>2. Confidence</h4>
         <ul>
           <li>Add-to-cart rate</li>
           <li>Product page conversion</li>
-          <li>Units sold &amp; revenue</li>
-          <li>Promo redemptions</li>
-          <li>Sales by channel</li>
+          <li>Institutional enquiries</li>
+          <li>Pre-launch signups</li>
+          <li>Pre-purchase support cases</li>
         </ul>
       </div>
 
       <div class="metric-cat">
-        <h4>5. Customer</h4>
+        <h4>3. Success</h4>
+        <ul>
+          <li>Successful first upload %</li>
+          <li>Driver support tickets</li>
+          <li>Time to first project</li>
+          <li>Tutorial usefulness rating</li>
+          <li>Low early return rate</li>
+        </ul>
+      </div>
+
+      <div class="metric-cat">
+        <h4>4. Advocacy</h4>
+        <ul>
+          <li>Product reviews (&gt;4.8 target)</li>
+          <li>Customer project shares</li>
+          <li>Student FYP submissions</li>
+          <li>Lecturer testimonials</li>
+          <li>Community group shares</li>
+        </ul>
+      </div>
+
+      <div class="metric-cat">
+        <h4>5. Commercial</h4>
         <ul>
           <li>NodeMCU stock movement</li>
           <li>% sales shifted to Maker</li>
-          <li>Tutorials migrated</li>
-          <li>Support tickets &amp; drivers</li>
-          <li>Customer ratings (target &gt;4.8)</li>
+          <li>Maker ESP32 units sold</li>
+          <li>Launch period revenue</li>
+          <li>Channel breakdown</li>
         </ul>
       </div>
     </div>

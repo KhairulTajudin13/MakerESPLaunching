@@ -1,0 +1,1296 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Maker ESP32 Customer-Persona Marketing Plans &mdash; 5 Tailored 1-Page Marketing Frameworks for Beginner Learners, Robot Builders, IoT Builders, FYP Students, and Educators.">
+<title>Maker ESP32 &mdash; Customer-Persona Marketing Plans</title>
+<style>
+/* Design Tokens & Color Palette */
+:root {
+  --ink:          #111827;
+  --muted:        #4b5563;
+  --light-muted:  #9ca3af;
+  --bg:           #f4f5f8;
+  --card-bg:      #ffffff;
+  --line:         #e5e7eb;
+  
+  /* Brand Purple */
+  --purple:       #6c2aa3;
+  --deep:         #3d155d;
+  --soft-purple:  #f3ebfc;
+  
+  /* Persona Colors */
+  --p1-beginner:  #6c2aa3; /* Purple */
+  --p2-robot:     #d97706; /* Amber */
+  --p3-iot:       #1d4ed8; /* Blue */
+  --p4-fyp:       #057a55; /* Green */
+  --p5-lecturer:  #3d155d; /* Deep Violet */
+  
+  /* 9-Box Phase Colors */
+  --before-bg:    #fff5f5;
+  --before-line:  #fecaca;
+  --before-text:  #991b1b;
+  
+  --during-bg:    #fffbeb;
+  --during-line:  #fde68a;
+  --during-text:  #92400e;
+  
+  --after-bg:     #f0fdf4;
+  --after-line:   #bbf7d0;
+  --after-text:   #166534;
+  
+  --shadow:       0 10px 25px -5px rgba(0,0,0,0.05), 0 8px 10px -6px rgba(0,0,0,0.03);
+  --r-card:       16px;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background-color: var(--bg);
+  color: var(--ink);
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  line-height: 1.45;
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2, h3, h4, p, ul { margin-top: 0; }
+
+.app-container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+/* Landing Header & Persona Selector */
+.landing-header {
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: var(--r-card);
+  padding: 28px 32px;
+  margin-bottom: 24px;
+  box-shadow: var(--shadow);
+}
+.header-tag {
+  font-size: 0.78rem;
+  font-weight: 800;
+  color: var(--purple);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 6px;
+}
+.header-title {
+  font-size: 2rem;
+  font-weight: 900;
+  color: var(--deep);
+  margin-bottom: 6px;
+}
+.header-subline {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--purple);
+  margin-bottom: 16px;
+}
+.header-desc {
+  font-size: 0.92rem;
+  color: var(--muted);
+  max-width: 1000px;
+  margin-bottom: 24px;
+}
+
+/* Persona Selector Cards Grid */
+.persona-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 14px;
+  margin-bottom: 20px;
+}
+.persona-select-card {
+  background: #f9fafb;
+  border: 2px solid var(--line);
+  border-radius: 12px;
+  padding: 16px 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+.persona-select-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.06);
+}
+.persona-select-card.active-card {
+  background: #ffffff;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+.persona-card-badge {
+  font-size: 0.7rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  padding: 2px 8px;
+  border-radius: 6px;
+  display: inline-block;
+  margin-bottom: 8px;
+  width: fit-content;
+}
+.persona-card-title {
+  font-size: 1rem;
+  font-weight: 900;
+  color: var(--deep);
+  margin-bottom: 4px;
+}
+.persona-card-sub {
+  font-size: 0.78rem;
+  color: var(--muted);
+  line-height: 1.3;
+}
+
+/* Specific Persona Accent Cards */
+.card-p1.active-card { border-color: var(--p1-beginner); }
+.card-p1 .persona-card-badge { background: var(--soft-purple); color: var(--p1-beginner); }
+
+.card-p2.active-card { border-color: var(--p2-robot); }
+.card-p2 .persona-card-badge { background: var(--during-bg); color: var(--p2-robot); }
+
+.card-p3.active-card { border-color: var(--p3-iot); }
+.card-p3 .persona-card-badge { background: #eff6ff; color: var(--p3-iot); }
+
+.card-p4.active-card { border-color: var(--p4-fyp); }
+.card-p4 .persona-card-badge { background: var(--after-bg); color: var(--p4-fyp); }
+
+.card-p5.active-card { border-color: var(--p5-lecturer); }
+.card-p5 .persona-card-badge { background: #f5f3ff; color: var(--p5-lecturer); }
+
+/* Global Toolbar Controls */
+.controls-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #ffffff;
+  border: 1px solid var(--line);
+  padding: 12px 24px;
+  border-radius: 12px;
+  margin-bottom: 24px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+}
+.btn-control {
+  background: #ffffff;
+  border: 1px solid var(--line);
+  color: var(--ink);
+  font-weight: 800;
+  font-size: 0.82rem;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.btn-control:hover { background: var(--soft-purple); color: var(--purple); border-color: rgba(108,42,163,0.3); }
+.btn-control-primary { background: var(--purple); color: #fff; border: none; }
+.btn-control-primary:hover { background: var(--deep); color: #fff; }
+
+/* Persona Plan Container */
+.persona-plan-wrapper {
+  display: none;
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: var(--r-card);
+  padding: 28px;
+  margin-bottom: 28px;
+  box-shadow: var(--shadow);
+}
+.persona-plan-wrapper.active-plan { display: block; }
+
+/* Persona Plan Header Strip */
+.plan-header-strip {
+  border-radius: 12px;
+  padding: 20px 24px;
+  margin-bottom: 20px;
+  color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.p1-bg { background: linear-gradient(135deg, #6c2aa3 0%, #3d155d 100%); }
+.p2-bg { background: linear-gradient(135deg, #d97706 0%, #92400e 100%); }
+.p3-bg { background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%); }
+.p4-bg { background: linear-gradient(135deg, #057a55 0%, #065f46 100%); }
+.p5-bg { background: linear-gradient(135deg, #3d155d 0%, #240c38 100%); }
+
+.plan-header-info h2 { font-size: 1.6rem; font-weight: 900; margin-bottom: 4px; }
+.plan-header-info p { font-size: 0.9rem; opacity: 0.95; font-weight: 700; margin-bottom: 0; }
+.plan-header-meta { text-align: right; font-size: 0.78rem; opacity: 0.9; line-height: 1.4; }
+
+/* Summary & Promise Bar */
+.plan-summary-bar {
+  background: #f9fafb;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 16px 20px;
+  margin-bottom: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 16px;
+  font-size: 0.85rem;
+}
+.summary-box strong { color: var(--deep); display: block; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 2px; }
+
+/* 9-Box Grid Layout */
+.nine-box-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 24px;
+}
+.nine-box-card {
+  border-radius: 12px;
+  padding: 18px;
+  font-size: 0.82rem;
+  line-height: 1.4;
+  display: flex;
+  flex-direction: column;
+}
+.box-header {
+  font-size: 0.76rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 6px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.box-title {
+  font-size: 1rem;
+  font-weight: 900;
+  margin-bottom: 10px;
+}
+
+/* Phase Colors */
+.phase-before { background: var(--before-bg); border: 1px solid var(--before-line); }
+.phase-before .box-header { color: var(--before-text); }
+.phase-before .box-title { color: var(--before-text); }
+
+.phase-during { background: var(--during-bg); border: 1px solid var(--during-line); }
+.phase-during .box-header { color: var(--during-text); }
+.phase-during .box-title { color: var(--during-text); }
+
+.phase-after { background: var(--after-bg); border: 1px solid var(--after-line); }
+.phase-after .box-header { color: var(--after-text); }
+.phase-after .box-title { color: var(--after-text); }
+
+/* Internal card lists & highlights */
+.box-list { margin: 6px 0; padding-left: 16px; }
+.box-list li { margin-bottom: 4px; }
+.highlight-pill {
+  background: rgba(108,42,163,0.1);
+  color: var(--purple);
+  font-weight: 800;
+  padding: 4px 8px;
+  border-radius: 6px;
+  display: inline-block;
+  font-size: 0.75rem;
+  margin-top: 6px;
+}
+.quote-box {
+  background: #ffffff;
+  border-left: 3px solid var(--purple);
+  padding: 6px 10px;
+  font-style: italic;
+  font-size: 0.78rem;
+  color: var(--muted);
+  margin: 6px 0;
+  border-radius: 0 6px 6px 0;
+}
+
+/* Shared Plan Footer */
+.plan-footer {
+  background: #f8f9fc;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 16px 20px;
+  font-size: 0.76rem;
+  color: var(--muted);
+  line-height: 1.45;
+}
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  font-weight: 800;
+}
+.footer-brand { color: var(--purple); font-size: 0.85rem; }
+
+/* Print Styles - Exact A4 Landscape Fitting */
+@media print {
+  @page {
+    size: A4 landscape;
+    margin: 8mm;
+  }
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+    font-size: 10pt;
+  }
+  .no-print { display: none !important; }
+  .app-container { max-width: 100% !important; padding: 0 !important; margin: 0 !important; }
+  
+  /* Print view rules */
+  .persona-plan-wrapper {
+    display: block !important;
+    page-break-after: always;
+    break-after: page;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    margin: 0 0 20px 0 !important;
+    height: 100vh;
+    box-sizing: border-box;
+  }
+  .persona-plan-wrapper:last-child {
+    page-break-after: avoid;
+    break-after: avoid;
+  }
+  
+  /* Show only active if printing single */
+  body.print-single .persona-plan-wrapper:not(.active-plan) {
+    display: none !important;
+  }
+  
+  .nine-box-grid {
+    gap: 8px !important;
+    margin-bottom: 10px !important;
+  }
+  .nine-box-card {
+    padding: 8px 10px !important;
+    font-size: 0.68rem !important;
+    line-height: 1.25 !important;
+    border-radius: 8px !important;
+  }
+  .box-title { font-size: 0.82rem !important; margin-bottom: 4px !important; }
+  .box-header { font-size: 0.62rem !important; margin-bottom: 2px !important; }
+  .plan-header-strip { padding: 10px 14px !important; margin-bottom: 10px !important; }
+  .plan-header-info h2 { font-size: 1.2rem !important; }
+  .plan-summary-bar { padding: 8px 12px !important; margin-bottom: 10px !important; font-size: 0.72rem !important; }
+  .plan-footer { padding: 8px 12px !important; font-size: 0.65rem !important; }
+}
+
+@media (max-width: 1024px) {
+  .persona-cards-grid { grid-template-columns: repeat(3, 1fr); }
+  .nine-box-grid { grid-template-columns: 1fr; }
+  .plan-summary-bar { grid-template-columns: 1fr; }
+}
+@media (max-width: 640px) {
+  .persona-cards-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<div class="app-container">
+
+  <!-- Landing Header -->
+  <header class="landing-header no-print" id="topSelection">
+    <div class="header-tag">Targeted Marketing Strategy</div>
+    <h1 class="header-title">Maker ESP32 Customer-Persona Marketing Plans</h1>
+    <div class="header-subline">From First Lesson to Final Project &middot; Hari Malaysia Launch (16 September 2026)</div>
+    <p class="header-desc">
+      Five tailored One-Page Marketing Frameworks based on community project paths. Each target persona addresses specific customer goals, frustrations, lead magnets, nurturing paths, conversion triggers, onboarding experiences, lifetime value progressions, and referral strategies.
+    </p>
+
+    <!-- Persona Selector Cards -->
+    <div class="persona-cards-grid">
+
+      <div class="persona-select-card card-p1 active-card" onclick="selectPersona('p1')">
+        <span class="persona-card-badge">Path 1</span>
+        <div class="persona-card-title">Beginner Learner</div>
+        <div class="persona-card-sub">I Am Learning ESP32 (42% poll segment)</div>
+      </div>
+
+      <div class="persona-select-card card-p2" onclick="selectPersona('p2')">
+        <span class="persona-card-badge">Path 2</span>
+        <div class="persona-card-title">Robot Builder</div>
+        <div class="persona-card-sub">I Am Building a Robot (53% sumo poll)</div>
+      </div>
+
+      <div class="persona-select-card card-p3" onclick="selectPersona('p3')">
+        <span class="persona-card-badge">Path 3</span>
+        <div class="persona-card-title">IoT Builder</div>
+        <div class="persona-card-sub">I Am Building an IoT Project (43% STEM poll)</div>
+      </div>
+
+      <div class="persona-select-card card-p4" onclick="selectPersona('p4')">
+        <span class="persona-card-badge">Path 4</span>
+        <div class="persona-card-title">FYP Student</div>
+        <div class="persona-card-sub">I Am Doing an FYP (24%&ndash;29% poll segment)</div>
+      </div>
+
+      <div class="persona-select-card card-p5" onclick="selectPersona('p5')">
+        <span class="persona-card-badge">Path 5</span>
+        <div class="persona-card-title">Lecturer / Trainer</div>
+        <div class="persona-card-sub">I Am Teaching ESP32 (21% poll segment)</div>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Controls Bar -->
+  <div class="controls-bar no-print">
+    <div>
+      <span style="font-weight:800; font-size:0.85rem; color:var(--deep);" id="activePersonaLabel">Active Plan: Persona 1 &mdash; The Beginner Learner</span>
+    </div>
+    <div style="display:flex; gap:10px;">
+      <button class="btn-control btn-control-primary" onclick="printSinglePersona()">Print Current Persona (1 Page A4)</button>
+      <button class="btn-control" onclick="printAllPersonas()">Print All Personas (5 Pages A4)</button>
+      <a href="#topSelection" class="btn-control" style="text-decoration:none;">Return to Selector &rarr;</a>
+    </div>
+  </div>
+
+  <!-- PERSONA 1: THE BEGINNER LEARNER -->
+  <div class="persona-plan-wrapper active-plan" id="plan-p1">
+    <div class="plan-header-strip p1-bg">
+      <div class="plan-header-info">
+        <h2>Persona 1: The Beginner Learner</h2>
+        <p>"See what your code is doing while you learn ESP32."</p>
+      </div>
+      <div class="plan-header-meta">
+        <strong>Target:</strong> First-time ESP32 Users, Students, New Makers<br>
+        <strong>Survey Basis:</strong> 42% ESP32 Community Poll (Largest Segment)<br>
+        <strong>RRP:</strong> RM39 (Launch Offer: ~20% Off pending approval)
+      </div>
+    </div>
+
+    <div class="plan-summary-bar">
+      <div class="summary-box">
+        <strong>Customer Goal</strong>
+        Upload first program, understand GPIO, and progress to useful projects without wiring &amp; driver frustration.
+      </div>
+      <div class="summary-box">
+        <strong>Main Frustration</strong>
+        "My code uploaded, but I cannot tell what the board is doing or where the problem is."
+      </div>
+      <div class="summary-box">
+        <strong>Persona Promise</strong>
+        Start with fewer setup barriers, understand electronic activity clearly, and build confidence one project at a time.
+      </div>
+    </div>
+
+    <div class="nine-box-grid">
+      <!-- 1. Target Market -->
+      <div class="nine-box-card phase-before">
+        <div class="box-header"><span>BEFORE &middot; PROSPECT</span><span>BOX 1</span></div>
+        <div class="box-title">1. My Target Market</div>
+        <div>
+          <strong>Who they are:</strong> First-time ESP32 users, students learning programming &amp; electronics, new makers, Arduino-to-ESP32 switchers, teachers learning before teaching.<br>
+          <strong>What they want:</strong> Successful first upload, easy GPIO experiments, clear examples, fewer wiring mistakes, simple troubleshooting, path beyond beginner exercises.<br>
+          <strong>What they worry about:</strong> Driver installation, wrong COM port, upload failure, wrong board selection, loose USB, wiring errors, code vs hardware confusion, outgrowing the board.
+        </div>
+      </div>
+
+      <!-- 2. Message -->
+      <div class="nine-box-card phase-before">
+        <div class="box-header"><span>BEFORE &middot; PROSPECT</span><span>BOX 2</span></div>
+        <div class="box-title">2. My Message to My Target Market</div>
+        <div>
+          <div style="font-weight:900; color:var(--purple); margin-bottom:4px;">Your First ESP32 Project Should Feel Clear, Not Confusing</div>
+          <div class="quote-box">Maker ESP32 gives beginners visual and audio feedback through GPIO LEDs, RX/TX indicators, a user button and a built-in buzzer.</div>
+          <strong>Benefit Hierarchy:</strong>
+          <ul class="box-list">
+            <li><strong>Start Faster:</strong> USB Type-C, familiar setup, built-in learning components, getting-started guides.</li>
+            <li><strong>Understand Better:</strong> 14 GPIO LEDs, RX/TX indicators, built-in button &amp; buzzer.</li>
+            <li><strong>Build Further:</strong> 8MB flash, Wi-Fi/Bluetooth, Maker Port, ESP32 ecosystem.</li>
+          </ul>
+          <span class="highlight-pill">Buying Trigger: "I can start learning without buying and wiring every basic component first."</span>
+        </div>
+      </div>
+
+      <!-- 3. Media -->
+      <div class="nine-box-card phase-before">
+        <div class="box-header"><span>BEFORE &middot; PROSPECT</span><span>BOX 3</span></div>
+        <div class="box-title">3. The Media I Will Use</div>
+        <div>
+          <strong>Priority Channels:</strong> YouTube beginner tutorials, Shorts, TikTok demos, ESP32 &amp; STEM Telegram communities, tutorial articles, product-page getting started section, uni/school maker groups, email series.<br>
+          <strong>Content Hooks:</strong>
+          <ul class="box-list">
+            <li>Your code is running. Can you see what it is doing?</li>
+            <li>First ESP32 upload in simple steps</li>
+            <li>GPIO HIGH and LOW made visible</li>
+            <li>Test input &amp; output without building the entire circuit</li>
+            <li>Five things beginners usually get wrong with ESP32</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 4. Lead Capture -->
+      <div class="nine-box-card phase-during">
+        <div class="box-header"><span>DURING &middot; LEAD</span><span>BOX 4</span></div>
+        <div class="box-title">4. My Lead Capture System</div>
+        <div>
+          <div style="font-weight:800; color:var(--during-text);">Lead Magnet: Maker ESP32 Beginner Quick-Start Guide</div>
+          <p style="margin-bottom:6px;">Includes: Arduino IDE installation, board-package setup, COM-port selection, first upload, GPIO LED test, user button test, buzzer test, first sensor connection.</p>
+          <strong>Entry Points:</strong> Beginner ESP32 quiz, Telegram poll, tutorial download, Notify Me form, first-project checklist.<br>
+          <span class="highlight-pill">Tags: Interest|Maker ESP32 &middot; Persona|Beginner Learner &middot; Use Case|Learning</span>
+        </div>
+      </div>
+
+      <!-- 5. Lead Nurturing -->
+      <div class="nine-box-card phase-during">
+        <div class="box-header"><span>DURING &middot; LEAD</span><span>BOX 5</span></div>
+        <div class="box-title">5. My Lead Nurturing System</div>
+        <div>
+          <div style="font-weight:800; color:var(--during-text); margin-bottom:4px;">Theme: From First Upload to First Connected Project</div>
+          <strong>8-Step Sequence:</strong>
+          <ol class="box-list" style="padding-left:14px;">
+            <li>Why ESP32 setup can feel confusing</li>
+            <li>Your first successful upload</li>
+            <li>See GPIO activity directly</li>
+            <li>Test the button and buzzer</li>
+            <li>Connect the first sensor</li>
+            <li>Connect to Wi-Fi</li>
+            <li>Build the first IoT project</li>
+            <li>Maker ESP32 launch reminder</li>
+          </ol>
+        </div>
+      </div>
+
+      <!-- 6. Sales Conversion -->
+      <div class="nine-box-card phase-during">
+        <div class="box-header"><span>DURING &middot; LEAD</span><span>BOX 6</span></div>
+        <div class="box-title">6. My Sales Conversion Strategy</div>
+        <div>
+          <strong>Overcoming Objections:</strong> Address beginner-friendliness, necessity of external parts, Arduino IDE support, RM10 NodeMCU difference, and growth potential.<br>
+          <strong>RM10 Value Justification:</strong> USB Type-C + 14 GPIO LEDs + RX/TX LEDs + User Button + Buzzer + Maker Port + 8MB Flash + Local Cytron tutorials.<br>
+          <div class="quote-box">Main Line: "Pay slightly more for an ESP32 board that helps make the learning process more visible and guided."</div>
+        </div>
+      </div>
+
+      <!-- 7. World-Class Experience -->
+      <div class="nine-box-card phase-after">
+        <div class="box-header"><span>AFTER &middot; CUSTOMER</span><span>BOX 7</span></div>
+        <div class="box-title">7. How I Deliver a World-Class Experience</div>
+        <div>
+          <strong>First-Hour Onboarding Path:</strong> Connect USB-C &rarr; Install board package &rarr; Select board &amp; COM &rarr; Upload first example &rarr; Observe GPIO LEDs &rarr; Test user button &rarr; Buzzer tone &rarr; First sensor.<br>
+          <strong>Provided Assets:</strong> Setup guide, driver guide, upload troubleshooting, example codes, pinout, FAQs, local support.<br>
+          <span class="highlight-pill">Promise: First hour spent learning board features, not searching missing setup info.</span>
+        </div>
+      </div>
+
+      <!-- 8. Lifetime Value -->
+      <div class="nine-box-card phase-after">
+        <div class="box-header"><span>AFTER &middot; CUSTOMER</span><span>BOX 8</span></div>
+        <div class="box-title">8. How I Increase Customer Lifetime Value</div>
+        <div>
+          <strong>Learning Progression Bundles:</strong> Beginner ESP32 kit &rarr; Sensor starter pack &rarr; OLED display &rarr; IoT starter pack &rarr; Data-logging project &rarr; Robotics beginner pack &rarr; Smart-home project pack.<br>
+          <strong>Content Journey:</strong> First Upload &rarr; GPIO &rarr; Button &amp; Buzzer &rarr; Sensor &rarr; Wi-Fi &rarr; Dashboard &rarr; Advanced Project.
+        </div>
+      </div>
+
+      <!-- 9. Referrals -->
+      <div class="nine-box-card phase-after">
+        <div class="box-header"><span>AFTER &middot; CUSTOMER</span><span>BOX 9</span></div>
+        <div class="box-title">9. How I Orchestrate &amp; Stimulate Referrals</div>
+        <div>
+          <strong>Share Invites:</strong> First successful upload, first sensor reading, first Wi-Fi project, first dashboard.<br>
+          <div class="quote-box">Referral Message: "Completed your first Maker ESP32 project? Share it and help another beginner take their first step."</div>
+          <strong>Recognition:</strong> Beginner project highlights, social reposts, community badges, Hari Malaysia beginner showcase.
+        </div>
+      </div>
+    </div>
+
+    <!-- Persona Plan Footer -->
+    <footer class="plan-footer">
+      <div class="footer-top">
+        <span class="footer-brand">CYTRON Maker ESP32 &middot; Persona 1 Marketing Plan</span>
+        <span>Hari Malaysia Launch: 16 September 2026 | Planned RRP: RM39</span>
+      </div>
+      <div>
+        <strong>Core Positioning:</strong> From First Lesson to Final Project &middot; <em>The ESP32 you know. Easier to learn, better to build with.</em> Start Faster. Understand Better. Build Further.<br>
+        <strong>SIRIM Compliance Wording:</strong> Powered by an ESP32-WROOM-32E wireless module type-approved by SIRIM under Cytron Technologies. <em>(Note: Approval applies to module; complete board is not claimed as SIRIM certified).</em><br>
+        <strong>Survey Methodology Note:</strong> Results are based on small Telegram convenience samples (ESP32 Community n=14, Sumo Robot n=17, STEM n=7). Treat as directional insights rather than total-market data. Margin cited internally only.
+      </div>
+    </footer>
+  </div>
+
+  <!-- PERSONA 2: THE ROBOT BUILDER -->
+  <div class="persona-plan-wrapper" id="plan-p2">
+    <div class="plan-header-strip p2-bg">
+      <div class="plan-header-info">
+        <h2>Persona 2: The Robot Builder</h2>
+        <p>"Understand your robot's inputs and outputs before putting it on the field."</p>
+      </div>
+      <div class="plan-header-meta">
+        <strong>Target:</strong> Sumo/Soccer Robot Teams, Line Followers, Robotics Clubs<br>
+        <strong>Survey Basis:</strong> 53% Sumo Robot Community Poll (Strongest Use Case)<br>
+        <strong>RRP:</strong> RM39 (Launch Offer: ~20% Off pending approval)
+      </div>
+    </div>
+
+    <div class="plan-summary-bar">
+      <div class="summary-box">
+        <strong>Customer Goal</strong>
+        Test sensors, inputs, communication and robot behaviour quickly before competition or demonstration.
+      </div>
+      <div class="summary-box">
+        <strong>Main Frustration</strong>
+        "The robot is not behaving correctly, but I cannot immediately tell whether the problem is sensor, code, comms or wiring."
+      </div>
+      <div class="summary-box">
+        <strong>Persona Promise</strong>
+        Make robot inputs, outputs and communication activity easier to observe during development and testing.
+      </div>
+    </div>
+
+    <div class="nine-box-grid">
+      <!-- 1. Target Market -->
+      <div class="nine-box-card phase-before">
+        <div class="box-header"><span>BEFORE &middot; PROSPECT</span><span>BOX 1</span></div>
+        <div class="box-title">1. My Target Market</div>
+        <div>
+          <strong>Who they are:</strong> Sumo robot builders, soccer robot builders, line-following teams, robotics clubs, competition students, robotics hobbyists, mentors, early prototype devs.<br>
+          <strong>What they need:</strong> Fast sensor tests, visible GPIO states, serial communication monitoring, familiar ESP32 programming, reliable setup, easy testing before motor integration.<br>
+          <strong>What they worry about:</strong> Robot failure near competition, sensor-state confusion, serial comms issues, motor-driver noise, Wi-Fi/BLE interference, power instability, debug delays.
+        </div>
+      </div>
+
+      <!-- 2. Message -->
+      <div class="nine-box-card phase-before">
+        <div class="box-header"><span>BEFORE &middot; PROSPECT</span><span>BOX 2</span></div>
+        <div class="box-title">2. My Message to My Target Market</div>
+        <div>
+          <div style="font-weight:900; color:var(--p2-robot); margin-bottom:4px;">See What Your Robot Controller Is Doing Before It Starts Moving</div>
+          <div class="quote-box">Maker ESP32 provides visual GPIO and RX/TX activity to help builders test control logic, sensors and communication more clearly.</div>
+          <strong>Product Proof:</strong> 14 GPIO LEDs, RX/TX LEDs, User Button, Passive Buzzer, 30 GPIOs, 8MB Flash, Wi-Fi/BLE.<br>
+          <span class="highlight-pill" style="background:#fef3c7; color:#92400e;">Accuracy Note: Does not eliminate motor noise or wireless interference. Power, layout, and grounding still matter.</span>
+        </div>
+      </div>
+
+      <!-- 3. Media -->
+      <div class="nine-box-card phase-before">
+        <div class="box-header"><span>BEFORE &middot; PROSPECT</span><span>BOX 3</span></div>
+        <div class="box-title">3. The Media I Will Use</div>
+        <div>
+          <strong>Priority Channels:</strong> Sumo Robot Telegram, Robotics Telegram, robotics competitions, short technical demos, YouTube robot-testing videos, uni robotics clubs, FB &amp; TikTok robot content.<br>
+          <strong>Content Hooks:</strong>
+          <ul class="box-list">
+            <li>Before your robot moves, understand what its controller is doing</li>
+            <li>Test robot inputs without connecting the motors</li>
+            <li>See sensor states through GPIO indicators</li>
+            <li>Is the problem in your code, sensor or communication?</li>
+            <li>Five checks before putting your robot on the field</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 4. Lead Capture -->
+      <div class="nine-box-card phase-during">
+        <div class="box-header"><span>DURING &middot; LEAD</span><span>BOX 4</span></div>
+        <div class="box-title">4. My Lead Capture System</div>
+        <div>
+          <div style="font-weight:800; color:var(--during-text);">Lead Magnet: ESP32 Robot I/O Testing Checklist</div>
+          <p style="margin-bottom:6px;">Includes: Sensor-state test, GPIO test, serial test, controller-input test, motor-supply separation, common-ground check, noise/interference check, pre-competition checklist.</p>
+          <strong>Entry Points:</strong> Robot-builder survey, checklist download, sensor-debugging guide, competition QR code, Telegram resource post.<br>
+          <span class="highlight-pill">Tags: Persona|Robot Builder &middot; Use Case|Robotics &middot; Interest|Maker ESP32</span>
+        </div>
+      </div>
+
+      <!-- 5. Lead Nurturing -->
+      <div class="nine-box-card phase-during">
+        <div class="box-header"><span>DURING &middot; LEAD</span><span>BOX 5</span></div>
+        <div class="box-title">5. My Lead Nurturing System</div>
+        <div>
+          <div style="font-weight:800; color:var(--during-text); margin-bottom:4px;">Theme: From First Input to Competition-Ready Prototype</div>
+          <strong>8-Step Sequence:</strong>
+          <ol class="box-list" style="padding-left:14px;">
+            <li>Test controller before motors</li>
+            <li>Visualise sensor inputs</li>
+            <li>Check GPIO outputs</li>
+            <li>Understand RX/TX comms</li>
+            <li>Integrate motor drivers safely</li>
+            <li>Test robot state by state</li>
+            <li>Competition prep checklist</li>
+            <li>Maker ESP32 launch reminder</li>
+          </ol>
+        </div>
+      </div>
+
+      <!-- 6. Sales Conversion -->
+      <div class="nine-box-card phase-during">
+        <div class="box-header"><span>DURING &middot; LEAD</span><span>BOX 6</span></div>
+        <div class="box-title">6. My Sales Conversion Strategy</div>
+        <div>
+          <strong>Customer Questions:</strong> Use existing ESP32 code? Test robot inputs easier? Work with motor drivers? Solve interference?<br>
+          <strong>Value Justification:</strong> GPIO-state visibility + Serial comms indicators + Onboard button/buzzer + 8MB Flash + Familiar ESP32 ecosystem.<br>
+          <div class="quote-box">Main Conversion Line: "A more visible way to test your robot controller before full system integration." <em>(Includes noise disclaimer).</em></div>
+        </div>
+      </div>
+
+      <!-- 7. World-Class Experience -->
+      <div class="nine-box-card phase-after">
+        <div class="box-header"><span>AFTER &middot; CUSTOMER</span><span>BOX 7</span></div>
+        <div class="box-title">7. How I Deliver a World-Class Experience</div>
+        <div>
+          <strong>Provided Resources:</strong> Robot I/O testing guide, GPIO-state example, RX/TX monitoring code, sensor-input test code, button &amp; buzzer diagnostics, motor-driver wiring guidance, power &amp; grounding checklist, noise troubleshooting, competition prep guide.<br>
+          <span class="highlight-pill">Promise: Isolate controller, sensor and comms issues before full robot testing.</span>
+        </div>
+      </div>
+
+      <!-- 8. Lifetime Value -->
+      <div class="nine-box-card phase-after">
+        <div class="box-header"><span>AFTER &middot; CUSTOMER</span><span>BOX 8</span></div>
+        <div class="box-title">8. How I Increase Customer Lifetime Value</div>
+        <div>
+          <strong>Next Purchase Steps:</strong> IR sensors &rarr; Distance sensors &rarr; Line sensors &rarr; Motor drivers &rarr; Batteries &amp; power modules &rarr; Chassis &rarr; RC controllers &rarr; Displays.<br>
+          <strong>Content Paths:</strong> Sumo robot &rarr; Soccer robot &rarr; Line follower &rarr; RC robot &rarr; Autonomous robot &rarr; Sensor calibration.
+        </div>
+      </div>
+
+      <!-- 9. Referrals -->
+      <div class="nine-box-card phase-after">
+        <div class="box-header"><span>AFTER &middot; CUSTOMER</span><span>BOX 9</span></div>
+        <div class="box-title">9. How I Orchestrate &amp; Stimulate Referrals</div>
+        <div>
+          <strong>Share Invites:</strong> Robot-build showcases, competition setup videos, sensor-calibration tips, controller-debugging stories, community code.<br>
+          <div class="quote-box">Referral Message: "Built a better robot with Maker ESP32? Share your setup and help the robotics community improve together."</div>
+          <strong>Recognition:</strong> Competition project highlights, team credit, robotics community feature.
+        </div>
+      </div>
+    </div>
+
+    <!-- Persona Plan Footer -->
+    <footer class="plan-footer">
+      <div class="footer-top">
+        <span class="footer-brand">CYTRON Maker ESP32 &middot; Persona 2 Marketing Plan</span>
+        <span>Hari Malaysia Launch: 16 September 2026 | Planned RRP: RM39</span>
+      </div>
+      <div>
+        <strong>Core Positioning:</strong> From First Lesson to Final Project &middot; <em>The ESP32 you know. Easier to learn, better to build with.</em> Start Faster. Understand Better. Build Further.<br>
+        <strong>SIRIM Compliance Wording:</strong> Powered by an ESP32-WROOM-32E wireless module type-approved by SIRIM under Cytron Technologies. <em>(Note: Approval applies to module; complete board is not claimed as SIRIM certified).</em><br>
+        <strong>Survey Methodology Note:</strong> Results based on small Telegram convenience samples. Treat as directional insights rather than total-market data. Margin cited internally only.
+      </div>
+    </footer>
+  </div>
+
+  <!-- PERSONA 3: THE IOT BUILDER -->
+  <div class="persona-plan-wrapper" id="plan-p3">
+    <div class="plan-header-strip p3-bg">
+      <div class="plan-header-info">
+        <h2>Persona 3: The IoT Builder</h2>
+        <p>"Start with a sensor, understand the data and continue towards a complete IoT project."</p>
+      </div>
+      <div class="plan-header-meta">
+        <strong>Target:</strong> Smart Home Developers, Environmental Monitoring, Data Loggers<br>
+        <strong>Survey Basis:</strong> 43% STEM Community Poll (Strongest Segment)<br>
+        <strong>RRP:</strong> RM39 (Launch Offer: ~20% Off pending approval)
+      </div>
+    </div>
+
+    <div class="plan-summary-bar">
+      <div class="summary-box">
+        <strong>Customer Goal</strong>
+        Move smoothly from reading a sensor to sending data and creating a useful dashboard or connected system.
+      </div>
+      <div class="summary-box">
+        <strong>Main Frustration</strong>
+        "The sensor works, but I lose time debugging wiring, serial communication, Wi-Fi or the data flow."
+      </div>
+      <div class="summary-box">
+        <strong>Persona Promise</strong>
+        Connect, observe and develop an IoT project with clearer feedback and a familiar ESP32 workflow.
+      </div>
+    </div>
+
+    <div class="nine-box-grid">
+      <!-- 1. Target Market -->
+      <div class="nine-box-card phase-before">
+        <div class="box-header"><span>BEFORE &middot; PROSPECT</span><span>BOX 1</span></div>
+        <div class="box-title">1. My Target Market</div>
+        <div>
+          <strong>Who they are:</strong> IoT beginners, smart-home builders, environmental monitoring devs, sensor/data logging users, dashboard creators, wireless prototype devs, makers.<br>
+          <strong>What they need:</strong> Simple sensor connection, reliable serial feedback, Wi-Fi connectivity, clear examples, dashboard tutorials, room for larger projects.<br>
+          <strong>What they worry about:</strong> Wrong sensor wiring, Wi-Fi setup difficulty, serial data not appearing, limited memory, driver/upload problems, incomplete examples.
+        </div>
+      </div>
+
+      <!-- 2. Message -->
+      <div class="nine-box-card phase-before">
+        <div class="box-header"><span>BEFORE &middot; PROSPECT</span><span>BOX 2</span></div>
+        <div class="box-title">2. My Message to My Target Market</div>
+        <div>
+          <div style="font-weight:900; color:var(--p3-iot); margin-bottom:4px;">Connect the Sensor. Understand the Data. Build the System.</div>
+          <div class="quote-box">Maker ESP32 helps users progress from basic sensor readings to Wi-Fi, dashboards, data logging and connected automation.</div>
+          <strong>Product Proof:</strong> Maker Port (Qwiic/STEMMA QT/Grove cable), RX/TX LEDs, GPIO indicators, 8MB Flash, Wi-Fi/BLE, 30 GPIOs.<br>
+          <span class="highlight-pill" style="background:#eff6ff; color:var(--p3-iot);">Customer Journey: Sensor &rarr; Serial Data &rarr; Wi-Fi &rarr; Dashboard &rarr; Notification &rarr; Automation</span>
+        </div>
+      </div>
+
+      <!-- 3. Media -->
+      <div class="nine-box-card phase-before">
+        <div class="box-header"><span>BEFORE &middot; PROSPECT</span><span>BOX 3</span></div>
+        <div class="box-title">3. The Media I Will Use</div>
+        <div>
+          <strong>Priority Channels:</strong> STEM Telegram, ESP32 Telegram, YouTube IoT tutorials, tutorial articles, smart-home communities, FB maker groups, uni IoT groups, short sensor-to-dashboard demos.<br>
+          <strong>Content Hooks:</strong>
+          <ul class="box-list">
+            <li>From first sensor reading to dashboard</li>
+            <li>Connect a sensor with less wiring</li>
+            <li>What RX/TX indicators tell you</li>
+            <li>Build your first Wi-Fi sensor node</li>
+            <li>Five steps from data to dashboard</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 4. Lead Capture -->
+      <div class="nine-box-card phase-during">
+        <div class="box-header"><span>DURING &middot; LEAD</span><span>BOX 4</span></div>
+        <div class="box-title">4. My Lead Capture System</div>
+        <div>
+          <div style="font-weight:800; color:var(--during-text);">Lead Magnet: Sensor-to-Dashboard Starter Guide</div>
+          <p style="margin-bottom:6px;">Includes: Sensor selection, Maker Port connection, serial monitoring, Wi-Fi setup, data formatting, dashboard connection, data logging, troubleshooting.</p>
+          <strong>Entry Points:</strong> IoT project finder, guide download, dashboard template, sample code, launch notification, smart-home quiz.<br>
+          <span class="highlight-pill">Tags: Persona|IoT Builder &middot; Use Case|IoT &middot; Use Case|Smart Home &middot; Interest|Maker ESP32</span>
+        </div>
+      </div>
+
+      <!-- 5. Lead Nurturing -->
+      <div class="nine-box-card phase-during">
+        <div class="box-header"><span>DURING &middot; LEAD</span><span>BOX 5</span></div>
+        <div class="box-title">5. My Lead Nurturing System</div>
+        <div>
+          <div style="font-weight:800; color:var(--during-text); margin-bottom:4px;">Theme: From Sensor to Connected System</div>
+          <strong>8-Step Sequence:</strong>
+          <ol class="box-list" style="padding-left:14px;">
+            <li>Choose the right sensor</li>
+            <li>Read and verify the value</li>
+            <li>Understand serial communication</li>
+            <li>Connect to Wi-Fi</li>
+            <li>Send data to cloud</li>
+            <li>Create the dashboard</li>
+            <li>Add alerts or automation</li>
+            <li>Maker ESP32 launch reminder</li>
+          </ol>
+        </div>
+      </div>
+
+      <!-- 6. Sales Conversion -->
+      <div class="nine-box-card phase-during">
+        <div class="box-header"><span>DURING &middot; LEAD</span><span>BOX 6</span></div>
+        <div class="box-title">6. My Sales Conversion Strategy</div>
+        <div>
+          <strong>Customer Questions:</strong> Connect to my sensor? Why Maker Port? 8MB flash importance? Arduino IDE? Dashboard tutorials?<br>
+          <strong>Value Justification:</strong> Maker Port plug-and-play + RX/TX comms verification + 8MB Flash memory + Wi-Fi stability + Local Cytron IoT tutorials.<br>
+          <div class="quote-box">Main Conversion Line: "A familiar ESP32 platform with built-in feedback and easier module connectivity for connected projects."</div>
+        </div>
+      </div>
+
+      <!-- 7. World-Class Experience -->
+      <div class="nine-box-card phase-after">
+        <div class="box-header"><span>AFTER &middot; CUSTOMER</span><span>BOX 7</span></div>
+        <div class="box-title">7. How I Deliver a World-Class Experience</div>
+        <div>
+          <strong>Provided Resources:</strong> Maker Port guide, sensor example, serial-monitor guide, Wi-Fi connection guide, dashboard tutorial, data-logging example, smart-home example, troubleshooting guide, power/input-voltage guidance.<br>
+          <span class="highlight-pill">Promise: One structured journey from sensor connection to usable dashboard.</span>
+        </div>
+      </div>
+
+      <!-- 8. Lifetime Value -->
+      <div class="nine-box-card phase-after">
+        <div class="box-header"><span>AFTER &middot; CUSTOMER</span><span>BOX 8</span></div>
+        <div class="box-title">8. How I Increase Customer Lifetime Value</div>
+        <div>
+          <strong>Next Purchase Steps:</strong> Temp/humidity sensors &rarr; Air-quality sensors &rarr; Light/motion sensors &rarr; Displays &rarr; Data-logging modules &rarr; Power supplies &rarr; Enclosures &rarr; Relays.<br>
+          <strong>Project Journeys:</strong> Environmental monitoring &rarr; Smart room &rarr; Smart agriculture &rarr; Energy monitoring &rarr; Home automation.
+        </div>
+      </div>
+
+      <!-- 9. Referrals -->
+      <div class="nine-box-card phase-after">
+        <div class="box-header"><span>AFTER &middot; CUSTOMER</span><span>BOX 9</span></div>
+        <div class="box-title">9. How I Orchestrate &amp; Stimulate Referrals</div>
+        <div>
+          <strong>Share Invites:</strong> Dashboard screenshots, smart-home systems, sensor installations, data-logging results, automation demos.<br>
+          <div class="quote-box">Referral Message: "Built an IoT project with Maker ESP32? Share the data, dashboard and story behind it."</div>
+          <strong>Recognition:</strong> IoT project showcase, dashboard highlight, customer tutorial feature.
+        </div>
+      </div>
+    </div>
+
+    <!-- Persona Plan Footer -->
+    <footer class="plan-footer">
+      <div class="footer-top">
+        <span class="footer-brand">CYTRON Maker ESP32 &middot; Persona 3 Marketing Plan</span>
+        <span>Hari Malaysia Launch: 16 September 2026 | Planned RRP: RM39</span>
+      </div>
+      <div>
+        <strong>Core Positioning:</strong> From First Lesson to Final Project &middot; <em>The ESP32 you know. Easier to learn, better to build with.</em> Start Faster. Understand Better. Build Further.<br>
+        <strong>SIRIM Compliance Wording:</strong> Powered by an ESP32-WROOM-32E wireless module type-approved by SIRIM under Cytron Technologies. <em>(Note: Approval applies to module; complete board is not claimed as SIRIM certified).</em><br>
+        <strong>Survey Methodology Note:</strong> Results based on small Telegram convenience samples. Treat as directional insights rather than total-market data. Margin cited internally only.
+      </div>
+    </footer>
+  </div>
+
+  <!-- PERSONA 4: THE FYP STUDENT -->
+  <div class="persona-plan-wrapper" id="plan-p4">
+    <div class="plan-header-strip p4-bg">
+      <div class="plan-header-info">
+        <h2>Persona 4: The FYP Student</h2>
+        <p>"Spend more time completing your FYP and less time troubleshooting basic setup."</p>
+      </div>
+      <div class="plan-header-meta">
+        <strong>Target:</strong> Diploma, Polytechnic &amp; University Engineering / CS / Robotics Students<br>
+        <strong>Survey Basis:</strong> 24% Sumo &amp; 29% STEM Community Polls (Academic Projects)<br>
+        <strong>RRP:</strong> RM39 (Launch Offer: ~20% Off pending approval)
+      </div>
+    </div>
+
+    <div class="plan-summary-bar">
+      <div class="summary-box">
+        <strong>Customer Goal</strong>
+        Build a working prototype, demonstrate it confidently and complete the report before the deadline.
+      </div>
+      <div class="summary-box">
+        <strong>Main Frustration</strong>
+        "I cannot afford to lose days troubleshooting basic board setup when I still need to finish the system, testing and report."
+      </div>
+      <div class="summary-box">
+        <strong>Persona Promise</strong>
+        A familiar ESP32 platform with clearer feedback, structured guidance and room to progress from proof of concept to final demo.
+      </div>
+    </div>
+
+    <div class="nine-box-grid">
+      <!-- 1. Target Market -->
+      <div class="nine-box-card phase-before">
+        <div class="box-header"><span>BEFORE &middot; PROSPECT</span><span>BOX 1</span></div>
+        <div class="box-title">1. My Target Market</div>
+        <div>
+          <strong>Who they are:</strong> Diploma, polytechnic, university students in engineering, computing, IoT, robotics, mechatronics, project teams.<br>
+          <strong>What they need:</strong> Reliable setup, clear pinout, example code, debugging visibility, sensor &amp; Wi-Fi support, local assistance, academic documentation.<br>
+          <strong>What they worry about:</strong> Submission deadlines, hardware failure, incomplete prototype, upload problems, power issues, limited examples, explaining design to lecturers.
+        </div>
+      </div>
+
+      <!-- 2. Message -->
+      <div class="nine-box-card phase-before">
+        <div class="box-header"><span>BEFORE &middot; PROSPECT</span><span>BOX 2</span></div>
+        <div class="box-title">2. My Message to My Target Market</div>
+        <div>
+          <div style="font-weight:900; color:var(--p4-fyp); margin-bottom:4px;">From Project Proposal to Final Demonstration</div>
+          <div class="quote-box">Maker ESP32 helps students begin with familiar ESP32 development and continue towards sensors, IoT, robotics, automation and complete academic prototypes.</div>
+          <strong>Product Proof:</strong> NodeMCU-style form factor, 8MB Flash, Wi-Fi/BLE, GPIO indicators, RX/TX indicators, Maker Port, Cytron local tech support.<br>
+          <span class="highlight-pill" style="background:var(--after-bg); color:var(--p4-fyp);">Emotional Message: Deadline should be spent improving system, not repeatedly solving setup problems. <em>(No zero-bug guarantee).</em></span>
+        </div>
+      </div>
+
+      <!-- 3. Media -->
+      <div class="nine-box-card phase-before">
+        <div class="box-header"><span>BEFORE &middot; PROSPECT</span><span>BOX 3</span></div>
+        <div class="box-title">3. The Media I Will Use</div>
+        <div>
+          <strong>Priority Channels:</strong> Uni Telegram groups, FYP groups, engineering clubs, lecturer networks, uni email outreach, Cytron tutorials, YouTube project content, campus workshops.<br>
+          <strong>Content Hooks:</strong>
+          <ul class="box-list">
+            <li>Planning an ESP32 FYP?</li>
+            <li>Five mistakes to avoid before buying hardware</li>
+            <li>How to plan GPIO and power requirements</li>
+            <li>From proof of concept to working prototype</li>
+            <li>FYP debugging checklist</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 4. Lead Capture -->
+      <div class="nine-box-card phase-during">
+        <div class="box-header"><span>DURING &middot; LEAD</span><span>BOX 4</span></div>
+        <div class="box-title">4. My Lead Capture System</div>
+        <div>
+          <div style="font-weight:800; color:var(--during-text);">Lead Magnet: ESP32 FYP Starter Checklist</div>
+          <p style="margin-bottom:6px;">Includes: Project objective, block diagram, sensor selection, GPIO planning, power planning, Wi-Fi/BLE planning, prototype stages, testing plan, debugging checklist, documentation checklist, final demo checklist.</p>
+          <strong>Entry Points:</strong> FYP checklist download, project-planning form, hardware enquiry, uni QR campaign.<br>
+          <span class="highlight-pill">Tags: Persona|FYP Student &middot; Use Case|FYP &middot; Use Case|Academic Project &middot; Interest|Maker ESP32</span>
+        </div>
+      </div>
+
+      <!-- 5. Lead Nurturing -->
+      <div class="nine-box-card phase-during">
+        <div class="box-header"><span>DURING &middot; LEAD</span><span>BOX 5</span></div>
+        <div class="box-title">5. My Lead Nurturing System</div>
+        <div>
+          <div style="font-weight:800; color:var(--during-text); margin-bottom:4px;">Theme: From FYP Idea to Working Prototype</div>
+          <strong>8-Step Sequence:</strong>
+          <ol class="box-list" style="padding-left:14px;">
+            <li>Define the project objective</li>
+            <li>Plan the hardware and GPIO</li>
+            <li>Build the first proof of concept</li>
+            <li>Add sensors and communication</li>
+            <li>Debug the complete system</li>
+            <li>Prepare testing evidence</li>
+            <li>Prepare final demonstration</li>
+            <li>Maker ESP32 launch &amp; resource reminder</li>
+          </ol>
+        </div>
+      </div>
+
+      <!-- 6. Sales Conversion -->
+      <div class="nine-box-card phase-during">
+        <div class="box-header"><span>DURING &middot; LEAD</span><span>BOX 6</span></div>
+        <div class="box-title">6. My Sales Conversion Strategy</div>
+        <div>
+          <strong>Customer Questions:</strong> Worth RM39? Use existing ESP32 code? Support my sensor? Suitable for IoT/robotics? Local support?<br>
+          <strong>Conversion Assets:</strong> Datasheet, pinout, getting-started guide, FYP checklist, project examples, SIRIM module approval statement.<br>
+          <div class="quote-box">Main Conversion Line: "Choose a board that can support the whole journey&mdash;from initial experiment to final project demonstration."</div>
+        </div>
+      </div>
+
+      <!-- 7. World-Class Experience -->
+      <div class="nine-box-card phase-after">
+        <div class="box-header"><span>AFTER &middot; CUSTOMER</span><span>BOX 7</span></div>
+        <div class="box-title">7. How I Deliver a World-Class Experience</div>
+        <div>
+          <strong>Provided Resources:</strong> FYP onboarding email, setup guide, project-planning template, GPIO planner, power checklist, sensor examples, debugging guide, IoT &amp; robotics resources, tutorial migration notes, FAQ, local support contact.<br>
+          <span class="highlight-pill">Promise: Clear place to begin and structured path towards a demonstrable prototype.</span>
+        </div>
+      </div>
+
+      <!-- 8. Lifetime Value -->
+      <div class="nine-box-card phase-after">
+        <div class="box-header"><span>AFTER &middot; CUSTOMER</span><span>BOX 8</span></div>
+        <div class="box-title">8. How I Increase Customer Lifetime Value</div>
+        <div>
+          <strong>Relevant Bundles:</strong> FYP starter bundle &rarr; IoT FYP bundle &rarr; Robotics FYP bundle &rarr; Sensor &amp; data-logging bundle &rarr; Display &amp; interface bundle &rarr; Power &amp; enclosure bundle.<br>
+          <strong>Next Purchases:</strong> Sensors, displays, motor drivers, power supplies, enclosures, cables, robotics platforms.
+        </div>
+      </div>
+
+      <!-- 9. Referrals -->
+      <div class="nine-box-card phase-after">
+        <div class="box-header"><span>AFTER &middot; CUSTOMER</span><span>BOX 9</span></div>
+        <div class="box-title">9. How I Orchestrate &amp; Stimulate Referrals</div>
+        <div>
+          <strong>Share Invites:</strong> FYP project submission, demonstration video, final prototype story, project poster, technical tutorial, institution showcase.<br>
+          <div class="quote-box">Referral Message: "Completed an FYP with Maker ESP32? Share the journey and help the next student begin with greater confidence."</div>
+          <strong>Recognition:</strong> Student &amp; institution credit, FYP showcase feature, Hari Malaysia project gallery.
+        </div>
+      </div>
+    </div>
+
+    <!-- Persona Plan Footer -->
+    <footer class="plan-footer">
+      <div class="footer-top">
+        <span class="footer-brand">CYTRON Maker ESP32 &middot; Persona 4 Marketing Plan</span>
+        <span>Hari Malaysia Launch: 16 September 2026 | Planned RRP: RM39</span>
+      </div>
+      <div>
+        <strong>Core Positioning:</strong> From First Lesson to Final Project &middot; <em>The ESP32 you know. Easier to learn, better to build with.</em> Start Faster. Understand Better. Build Further.<br>
+        <strong>SIRIM Compliance Wording:</strong> Powered by an ESP32-WROOM-32E wireless module type-approved by SIRIM under Cytron Technologies. <em>(Note: Approval applies to module; complete board is not claimed as SIRIM certified).</em><br>
+        <strong>Survey Methodology Note:</strong> Results based on small Telegram convenience samples. Treat as directional insights rather than total-market data. Margin cited internally only.
+      </div>
+    </footer>
+  </div>
+
+  <!-- PERSONA 5: THE LECTURER OR TRAINER -->
+  <div class="persona-plan-wrapper" id="plan-p5">
+    <div class="plan-header-strip p5-bg">
+      <div class="plan-header-info">
+        <h2>Persona 5: The Lecturer or Trainer</h2>
+        <p>"Help students understand what the code is doing&mdash;not only copy it."</p>
+      </div>
+      <div class="plan-header-meta">
+        <strong>Target:</strong> Uni/Poly Lecturers, Teachers, Lab Managers, STEM Trainers<br>
+        <strong>Survey Basis:</strong> 21% ESP32 Community Poll (Key Educator Influencer Group)<br>
+        <strong>RRP:</strong> RM39 (Launch Offer: ~20% Off pending approval; Bulk Options)
+      </div>
+    </div>
+
+    <div class="plan-summary-bar">
+      <div class="summary-box">
+        <strong>Customer Goal</strong>
+        Deliver repeatable lessons, demonstrate hardware behaviour clearly and reduce classroom time lost to setup problems.
+      </div>
+      <div class="summary-box">
+        <strong>Main Frustration</strong>
+        "Students copy the code, but many still cannot see what the program is doing or identify where the problem comes from."
+      </div>
+      <div class="summary-box">
+        <strong>Persona Promise</strong>
+        A familiar ESP32 platform with visible GPIO activity, built-in learning tools and structured resources for clearer demos.
+      </div>
+    </div>
+
+    <div class="nine-box-grid">
+      <!-- 1. Target Market -->
+      <div class="nine-box-card phase-before">
+        <div class="box-header"><span>BEFORE &middot; PROSPECT</span><span>BOX 1</span></div>
+        <div class="box-title">1. My Target Market</div>
+        <div>
+          <strong>Who they are:</strong> Uni/poly/college lecturers, school teachers, STEM trainers, training centres, lab managers, robotics mentors, institution purchasers.<br>
+          <strong>What they need:</strong> Consistent board specs, repeatable activities, clear GPIO demos, product docs, local support, bulk purchase options, compliance confidence.<br>
+          <strong>What they worry about:</strong> Different drivers between student boards, inconsistent batches, lost classroom time, student wiring errors, limited lesson resources, product discontinuation.
+        </div>
+      </div>
+
+      <!-- 2. Message -->
+      <div class="nine-box-card phase-before">
+        <div class="box-header"><span>BEFORE &middot; PROSPECT</span><span>BOX 2</span></div>
+        <div class="box-title">2. My Message to My Target Market</div>
+        <div>
+          <div style="font-weight:900; color:var(--purple); margin-bottom:4px;">Make ESP32 Learning More Visible and Easier to Demonstrate</div>
+          <div class="quote-box">Maker ESP32 combines familiar ESP32 development with onboard indicators, input and output tools, and structured support for classroom use.</div>
+          <strong>Teaching Benefits:</strong> GPIO activity visible to class, RX/TX visibility, built-in user button &amp; buzzer, fewer external parts for basic lessons.<br>
+          <span class="highlight-pill" style="background:#f5f3ff; color:var(--purple);">Purchasing Confidence: Powered by an ESP32-WROOM-32E wireless module type-approved by SIRIM under Cytron Technologies.</span>
+        </div>
+      </div>
+
+      <!-- 3. Media -->
+      <div class="nine-box-card phase-before">
+        <div class="box-header"><span>BEFORE &middot; PROSPECT</span><span>BOX 3</span></div>
+        <div class="box-title">3. The Media I Will Use</div>
+        <div>
+          <strong>Priority Channels:</strong> Educator email newsletter, STEM Telegram, lecturer networks, Cytron EDU channels, workshops, training sessions, uni outreach, LinkedIn educational content, direct sales.<br>
+          <strong>Content Hooks:</strong>
+          <ul class="box-list">
+            <li>Five beginner ESP32 activities</li>
+            <li>Make GPIO activity visible</li>
+            <li>Reduce classroom setup time</li>
+            <li>From digital I/O to IoT laboratory</li>
+            <li>How one board can support a full learning progression</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 4. Lead Capture -->
+      <div class="nine-box-card phase-during">
+        <div class="box-header"><span>DURING &middot; LEAD</span><span>BOX 4</span></div>
+        <div class="box-title">4. My Lead Capture System</div>
+        <div>
+          <div style="font-weight:800; color:var(--during-text);">Lead Magnet: Five Beginner ESP32 Activities for the Classroom</div>
+          <p style="margin-bottom:6px;">Activities: Digital output, user-button input, passive-buzzer output, sensor reading, Wi-Fi data display.</p>
+          <strong>Entry Points:</strong> Activity download, lecturer resource form, sample lesson plan, institutional enquiry, classroom-pack request, workshop registration.<br>
+          <span class="highlight-pill">Tags: Persona|Lecturer &middot; Use Case|Teaching &middot; TA|Institution &middot; Purchase|Bulk</span>
+        </div>
+      </div>
+
+      <!-- 5. Lead Nurturing -->
+      <div class="nine-box-card phase-during">
+        <div class="box-header"><span>DURING &middot; LEAD</span><span>BOX 5</span></div>
+        <div class="box-title">5. My Lead Nurturing System</div>
+        <div>
+          <div style="font-weight:800; color:var(--during-text); margin-bottom:4px;">Theme: From First Demonstration to Student Project</div>
+          <strong>8-Step Sequence:</strong>
+          <ol class="box-list" style="padding-left:14px;">
+            <li>Common classroom setup challenges</li>
+            <li>Demonstrating GPIO activity</li>
+            <li>Built-in input and output activities</li>
+            <li>Sensor and Maker Port lesson</li>
+            <li>Wi-Fi and IoT laboratory</li>
+            <li>Student project progression</li>
+            <li>Classroom pack &amp; institutional support</li>
+            <li>Hari Malaysia launch reminder</li>
+          </ol>
+        </div>
+      </div>
+
+      <!-- 6. Sales Conversion -->
+      <div class="nine-box-card phase-during">
+        <div class="box-header"><span>DURING &middot; LEAD</span><span>BOX 6</span></div>
+        <div class="box-title">6. My Sales Conversion Strategy</div>
+        <div>
+          <strong>Institutional Questions:</strong> Suitable for class? Lesson resources available? Units consistent? Students use Arduino IDE? SIRIM module docs? Bulk options?<br>
+          <strong>Conversion Assets:</strong> Sample lesson, comparison matrix, pinout, datasheet, SIRIM docs, classroom pack CTA, local support.<br>
+          <div class="quote-box">Main Conversion Line: "One familiar ESP32 platform that can support beginner activities, laboratory lessons and student projects." <em>(Designed to make classroom setup easier).</em></div>
+        </div>
+      </div>
+
+      <!-- 7. World-Class Experience -->
+      <div class="nine-box-card phase-after">
+        <div class="box-header"><span>AFTER &middot; CUSTOMER</span><span>BOX 7</span></div>
+        <div class="box-title">7. How I Deliver a World-Class Experience</div>
+        <div>
+          <strong>Provided Resources:</strong> Lecturer onboarding pack, classroom activity guide, example codes, answer keys/expected outputs, pinout, driver setup, troubleshooting guide, lab prep checklist, student quick-start sheet, support-team contact.<br>
+          <span class="highlight-pill">Promise: Prepare repeatable activity and help students troubleshoot using same documented config.</span>
+        </div>
+      </div>
+
+      <!-- 8. Lifetime Value -->
+      <div class="nine-box-card phase-after">
+        <div class="box-header"><span>AFTER &middot; CUSTOMER</span><span>BOX 8</span></div>
+        <div class="box-title">8. How I Increase Customer Lifetime Value</div>
+        <div>
+          <strong>Relevant Offers:</strong> Classroom multipacks &rarr; Uni lab packs &rarr; Sensor teaching packs &rarr; IoT lab kits &rarr; Robotics classroom kits &rarr; Training workshops &rarr; Replacement/spare unit planning.<br>
+          <strong>Progression:</strong> Digital I/O &rarr; I/O &rarr; Sensor &rarr; Comms &rarr; Wi-Fi &rarr; IoT &rarr; Robotics &rarr; Student Project.
+        </div>
+      </div>
+
+      <!-- 9. Referrals -->
+      <div class="nine-box-card phase-after">
+        <div class="box-header"><span>AFTER &middot; CUSTOMER</span><span>BOX 9</span></div>
+        <div class="box-title">9. How I Orchestrate &amp; Stimulate Referrals</div>
+        <div>
+          <strong>Share Invites:</strong> Lecturer testimonials, classroom activity submissions, student-project highlights, institution case studies, workshop feedback.<br>
+          <div class="quote-box">Referral Message: "Using Maker ESP32 in your class? Share the activity and help other educators make ESP32 learning more visible."</div>
+          <strong>Recognition:</strong> Lecturer &amp; institution credit, classroom success story, teaching-resource contributor feature.
+        </div>
+      </div>
+    </div>
+
+    <!-- Persona Plan Footer -->
+    <footer class="plan-footer">
+      <div class="footer-top">
+        <span class="footer-brand">CYTRON Maker ESP32 &middot; Persona 5 Marketing Plan</span>
+        <span>Hari Malaysia Launch: 16 September 2026 | Planned RRP: RM39</span>
+      </div>
+      <div>
+        <strong>Core Positioning:</strong> From First Lesson to Final Project &middot; <em>The ESP32 you know. Easier to learn, better to build with.</em> Start Faster. Understand Better. Build Further.<br>
+        <strong>SIRIM Compliance Wording:</strong> Powered by an ESP32-WROOM-32E wireless module type-approved by SIRIM under Cytron Technologies. <em>(Note: Approval applies to module; complete board is not claimed as SIRIM certified).</em><br>
+        <strong>Survey Methodology Note:</strong> Results based on small Telegram convenience samples. Treat as directional insights rather than total-market data. Margin cited internally only.
+      </div>
+    </footer>
+  </div>
+
+</div>
+
+<script>
+const personaLabels = {
+  'p1': 'Persona 1 &mdash; The Beginner Learner',
+  'p2': 'Persona 2 &mdash; The Robot Builder',
+  'p3': 'Persona 3 &mdash; The IoT Builder',
+  'p4': 'Persona 4 &mdash; The FYP Student',
+  'p5': 'Persona 5 &mdash; The Lecturer / Trainer'
+};
+
+function selectPersona(id) {
+  // Update select card state
+  document.querySelectorAll('.persona-select-card').forEach(card => card.classList.remove('active-card'));
+  const card = document.querySelector(.card-\);
+  if (card) card.classList.add('active-card');
+
+  // Update plan visibility
+  document.querySelectorAll('.persona-plan-wrapper').forEach(plan => plan.classList.remove('active-plan'));
+  const targetPlan = document.getElementById(plan-\);
+  if (targetPlan) targetPlan.classList.add('active-plan');
+
+  // Update label
+  const lbl = document.getElementById('activePersonaLabel');
+  if (lbl && personaLabels[id]) lbl.innerHTML = Active Plan: \;
+}
+
+function printSinglePersona() {
+  document.body.classList.add('print-single');
+  window.print();
+  document.body.classList.remove('print-single');
+}
+
+function printAllPersonas() {
+  document.body.classList.remove('print-single');
+  window.print();
+}
+</script>
+
+</body>
+</html>
