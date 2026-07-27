@@ -1,0 +1,828 @@
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Maker ESP32 Persona Marketing Plan &mdash; Persona 1: Aiman Hakim (The Beginner Learner). A complete 1-Page Marketing Framework for ESP32 beginners.">
+<title>Maker ESP32 Persona Marketing Plan &mdash; Aiman Hakim (Beginner Learner)</title>
+<style>
+/* Design Tokens & Color System */
+:root {
+  --ink:          #111827;
+  --muted:        #4b5563;
+  --light-muted:  #9ca3af;
+  --bg:           #f4f5f8;
+  --card-bg:      #ffffff;
+  --line:         #e5e7eb;
+  
+  /* Brand Purple & Accents */
+  --purple:       #6c2aa3;
+  --deep:         #3d155d;
+  --soft-purple:  #f3ebfc;
+  
+  /* Phase Colors */
+  --before-bg:    #fff5f5;
+  --before-line:  #fecaca;
+  --before-text:  #991b1b;
+  --before-pill:  #dc2626;
+  
+  --during-bg:    #fffbeb;
+  --during-line:  #fde68a;
+  --during-text:  #92400e;
+  --during-pill:  #d97706;
+  
+  --after-bg:     #f0fdf4;
+  --after-line:   #bbf7d0;
+  --after-text:   #166534;
+  --after-pill:   #057a55;
+  
+  --shadow:       0 8px 20px -4px rgba(108,42,163,0.06), 0 4px 6px -2px rgba(0,0,0,0.03);
+  --r-card:       14px;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background-color: var(--bg);
+  color: var(--ink);
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  line-height: 1.4;
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2, h3, h4, p, ul, ol { margin-top: 0; }
+
+.app-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Header Action Controls */
+.top-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+.btn-nav {
+  background: #ffffff;
+  border: 1px solid var(--line);
+  color: var(--ink);
+  font-size: 0.82rem;
+  font-weight: 800;
+  padding: 8px 16px;
+  border-radius: 8px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.btn-nav:hover { background: var(--soft-purple); color: var(--purple); border-color: rgba(108,42,163,0.3); }
+.btn-print-primary { background: var(--purple); color: #ffffff; border: none; }
+.btn-print-primary:hover { background: var(--deep); color: #ffffff; }
+
+/* Persona Header Card */
+.persona-header-card {
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: var(--r-card);
+  padding: 24px;
+  margin-bottom: 20px;
+  box-shadow: var(--shadow);
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 24px;
+  align-items: center;
+}
+
+.persona-profile {
+  display: flex;
+  gap: 18px;
+  align-items: flex-start;
+}
+.avatar-box {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: var(--soft-purple);
+  border: 2px solid var(--purple);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  flex-shrink: 0;
+}
+.persona-info-title {
+  font-size: 1.6rem;
+  font-weight: 900;
+  color: var(--deep);
+  line-height: 1.15;
+  margin-bottom: 2px;
+}
+.persona-tagline {
+  font-size: 0.88rem;
+  font-weight: 800;
+  color: var(--purple);
+  margin-bottom: 8px;
+}
+.persona-meta-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+.meta-chip {
+  background: #f3f4f6;
+  border: 1px solid #e5e7eb;
+  padding: 3px 8px;
+  border-radius: 6px;
+  font-size: 0.74rem;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.persona-quote-card {
+  background: var(--before-bg);
+  border-left: 4px solid var(--before-pill);
+  padding: 10px 14px;
+  border-radius: 0 8px 8px 0;
+  font-style: italic;
+  font-size: 0.84rem;
+  color: var(--before-text);
+  margin-top: 6px;
+}
+
+/* Header Right - Product & Campaign Box */
+.header-prod-box {
+  background: linear-gradient(135deg, #fcf9ff 0%, #f3ebfc 100%);
+  border: 1px solid rgba(108,42,163,0.2);
+  border-radius: 12px;
+  padding: 16px;
+  text-align: center;
+}
+.prod-img-thumb {
+  max-width: 130px;
+  height: auto;
+  border-radius: 8px;
+  filter: drop-shadow(0 6px 12px rgba(0,0,0,0.1));
+  margin-bottom: 8px;
+}
+.prod-campaign-title {
+  font-size: 0.95rem;
+  font-weight: 900;
+  color: var(--deep);
+}
+.prod-campaign-sub {
+  font-size: 0.78rem;
+  font-weight: 800;
+  color: var(--purple);
+  margin-bottom: 6px;
+}
+.launch-badge-strip {
+  font-size: 0.72rem;
+  font-weight: 700;
+  background: #ffffff;
+  border: 1px solid var(--line);
+  padding: 4px 8px;
+  border-radius: 6px;
+  color: var(--muted);
+}
+
+/* Transformation Strip */
+.transformation-strip {
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 14px 20px;
+  margin-bottom: 20px;
+  box-shadow: var(--shadow);
+  display: grid;
+  grid-template-columns: 1fr auto 1fr auto 1fr;
+  gap: 12px;
+  align-items: center;
+  text-align: center;
+  font-size: 0.82rem;
+}
+.trans-step { padding: 8px 12px; border-radius: 8px; }
+.trans-before { background: var(--before-bg); border: 1px solid var(--before-line); color: var(--before-text); }
+.trans-maker { background: var(--soft-purple); border: 1px solid rgba(108,42,163,0.2); color: var(--purple); }
+.trans-outcome { background: var(--after-bg); border: 1px solid var(--after-line); color: var(--after-text); }
+.trans-arrow { font-size: 1.2rem; font-weight: 900; color: var(--light-muted); }
+
+/* 9-Box Grid System */
+.nine-box-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 20px;
+}
+.box-card {
+  border-radius: 12px;
+  padding: 16px;
+  font-size: 0.8rem;
+  line-height: 1.4;
+  display: flex;
+  flex-direction: column;
+}
+.box-stage-tag {
+  font-size: 0.7rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 4px;
+  display: flex;
+  justify-content: space-between;
+}
+.box-title {
+  font-size: 0.98rem;
+  font-weight: 900;
+  margin-bottom: 8px;
+}
+
+/* Phase Styles */
+.phase-before { background: var(--before-bg); border: 1px solid var(--before-line); }
+.phase-before .box-stage-tag { color: var(--before-text); }
+.phase-before .box-title { color: var(--before-text); }
+
+.phase-during { background: var(--during-bg); border: 1px solid var(--during-line); }
+.phase-during .box-stage-tag { color: var(--during-text); }
+.phase-during .box-title { color: var(--during-text); }
+
+.phase-after { background: var(--after-bg); border: 1px solid var(--after-line); }
+.phase-after .box-stage-tag { color: var(--after-text); }
+.phase-after .box-title { color: var(--after-text); }
+
+.box-list { margin: 4px 0 8px; padding-left: 14px; }
+.box-list li { margin-bottom: 3px; }
+
+.pill-highlight {
+  background: #ffffff;
+  border: 1px solid rgba(0,0,0,0.1);
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 0.74rem;
+  font-weight: 800;
+  display: inline-block;
+  margin-top: auto;
+}
+
+/* Footer Section */
+.footer-card {
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 16px 20px;
+  font-size: 0.75rem;
+  color: var(--muted);
+  line-height: 1.45;
+  box-shadow: var(--shadow);
+}
+.footer-brand-line {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 8px;
+  margin-bottom: 8px;
+  font-weight: 800;
+}
+
+/* Print Media Optimization (1-Page A4 Landscape) */
+@media print {
+  @page {
+    size: A4 landscape;
+    margin: 5mm;
+  }
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+    font-size: 8.5pt !important;
+  }
+  .no-print { display: none !important; }
+  .app-container { max-width: 100% !important; padding: 0 !important; margin: 0 !important; }
+  
+  .persona-header-card {
+    padding: 12px 16px !important;
+    margin-bottom: 10px !important;
+    grid-template-columns: 1fr 260px !important;
+    gap: 14px !important;
+    box-shadow: none !important;
+  }
+  .avatar-box { width: 48px !important; height: 48px !important; font-size: 1.4rem !important; }
+  .persona-info-title { font-size: 1.25rem !important; }
+  .persona-tagline { font-size: 0.78rem !important; margin-bottom: 4px !important; }
+  .persona-quote-card { padding: 6px 10px !important; font-size: 0.76rem !important; margin-top: 4px !important; }
+  
+  .header-prod-box { padding: 8px !important; }
+  .prod-img-thumb { max-width: 75px !important; margin-bottom: 4px !important; }
+  .prod-campaign-title { font-size: 0.8rem !important; }
+  .prod-campaign-sub { font-size: 0.7rem !important; margin-bottom: 2px !important; }
+  .launch-badge-strip { font-size: 0.64rem !important; padding: 2px 6px !important; }
+
+  .transformation-strip {
+    padding: 6px 12px !important;
+    margin-bottom: 10px !important;
+    font-size: 0.72rem !important;
+  }
+  .trans-step { padding: 4px 8px !important; }
+
+  .nine-box-grid {
+    gap: 8px !important;
+    margin-bottom: 10px !important;
+  }
+  .box-card {
+    padding: 8px 10px !important;
+    font-size: 0.65rem !important;
+    line-height: 1.22 !important;
+    border-radius: 8px !important;
+  }
+  .box-title { font-size: 0.78rem !important; margin-bottom: 4px !important; }
+  .box-stage-tag { font-size: 0.58rem !important; margin-bottom: 2px !important; }
+  .box-list { margin: 2px 0 4px !important; padding-left: 12px !important; }
+  .box-list li { margin-bottom: 2px !important; }
+
+  .footer-card {
+    padding: 8px 12px !important;
+    font-size: 0.62rem !important;
+    line-height: 1.3 !important;
+    box-shadow: none !important;
+  }
+  .footer-brand-line { padding-bottom: 4px !important; margin-bottom: 4px !important; }
+}
+
+@media (max-width: 1024px) {
+  .persona-header-card { grid-template-columns: 1fr; }
+  .transformation-strip { grid-template-columns: 1fr; gap: 6px; }
+  .trans-arrow { display: none; }
+  .nine-box-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+
+<body>
+<div class="app-container">
+
+  <!-- Header Navigation -->
+  <div class="top-nav no-print">
+    <a href="index.html#customer-personas" class="btn-nav">&larr; Back to Maker ESP32 Main Page</a>
+    <a href="maker-esp32-persona-beginner-learner.html" class="btn-nav" style="color:var(--blue); border-color:var(--blue);">View Full Internal Marketing Plan</a>
+    <button class="btn-nav btn-print-primary" onclick="window.print()">Print / Save as PDF</button>
+  </div>
+
+  <!-- 1. Simplified Hero -->
+  <header class="persona-header-card" style="grid-template-columns: 1fr; text-align:center;">
+    <div>
+      <div class="launch-badge-strip" style="display:inline-block; margin-bottom:12px; color:var(--purple); border-color:var(--purple);">For Beginners, Students and New Makers</div>
+      <h1 class="persona-info-title" style="font-size:2.2rem; margin-bottom:16px;">New to ESP32? Start with a Board That Helps You See What Is Happening.</h1>
+      <p style="font-size:1.1rem; color:var(--muted); max-width:800px; margin:0 auto 24px;">
+        Maker ESP32 gives you built-in LEDs, a button, a buzzer and USB-C, so you can begin experimenting and understand your code without wiring every basic component first.
+      </p>
+      
+      <div style="background:linear-gradient(135deg, #fcf9ff 0%, #f3ebfc 100%); border:1px solid rgba(108,42,163,0.2); border-radius:12px; padding:16px; margin:0 auto 24px; max-width:600px;">
+        <div style="font-size:1.2rem; font-weight:900; color:var(--deep); margin-bottom:4px;">From First Lesson to Final Project</div>
+        <div style="font-size:0.95rem; font-weight:800; color:var(--purple);">The ESP32 you know. Easier to learn, better to build with.</div>
+      </div>
+
+      <div style="display:flex; justify-content:center; gap:16px; margin-bottom:20px; flex-wrap:wrap;">
+        <a href="#projects" class="btn-nav btn-print-primary" style="font-size:1rem; padding:12px 24px;">Try Your First ESP32 Project</a>
+        <a href="#benefits" class="btn-nav" style="font-size:1rem; padding:12px 24px;">See How Maker ESP32 Helps</a>
+      </div>
+      
+      <div class="launch-badge-strip" style="display:inline-block;">Launching 16 September 2026</div>
+    </div>
+  </header>
+
+  <!-- 2. Is This for You? -->
+  <section class="box-card" style="background:#fff; border:1px solid var(--line); margin-bottom:20px; box-shadow:var(--shadow);">
+    <h2 class="box-title" style="font-size:1.4rem; color:var(--deep); text-align:center; margin-bottom:20px;">Maker ESP32 Could Be for You If&hellip;</h2>
+    
+    <div style="display:flex; flex-wrap:wrap; gap:20px; align-items:center;">
+      <div style="flex:1; min-width:300px;">
+        <ul style="list-style:none; padding:0; margin:0; font-size:1rem; color:var(--ink);">
+          <li style="margin-bottom:12px; display:flex; align-items:flex-start; gap:10px;">
+            <span style="color:var(--green); font-weight:900;">&check;</span> You are new to ESP32
+          </li>
+          <li style="margin-bottom:12px; display:flex; align-items:flex-start; gap:10px;">
+            <span style="color:var(--green); font-weight:900;">&check;</span> You are learning programming or electronics
+          </li>
+          <li style="margin-bottom:12px; display:flex; align-items:flex-start; gap:10px;">
+            <span style="color:var(--green); font-weight:900;">&check;</span> You want to see whether your GPIO code is working
+          </li>
+          <li style="margin-bottom:12px; display:flex; align-items:flex-start; gap:10px;">
+            <span style="color:var(--green); font-weight:900;">&check;</span> You want fewer components for your first experiments
+          </li>
+          <li style="margin-bottom:12px; display:flex; align-items:flex-start; gap:10px;">
+            <span style="color:var(--green); font-weight:900;">&check;</span> You want one board that can continue into IoT, robotics or an FYP
+          </li>
+        </ul>
+        <div style="margin-top:20px; font-weight:800; color:var(--purple); font-size:1.05rem;">
+          Checked two or more? Maker ESP32 is designed for your learning journey.
+        </div>
+      </div>
+      
+      <!-- Aiman Persona Card -->
+      <div style="flex:0 0 320px; background:var(--bg); border:1px solid var(--line); border-radius:12px; padding:16px;">
+        <div style="font-size:0.8rem; font-weight:900; color:var(--muted); text-transform:uppercase; margin-bottom:8px;">A Beginner Like Aiman</div>
+        <div style="font-size:0.85rem; color:var(--ink); margin-bottom:12px;">
+          Aiman is learning ESP32 for assignments and wants to continue towards an IoT project. He needs a board that helps him see what his code is doing without making the first experiment unnecessarily complicated.
+        </div>
+        <div style="background:var(--before-bg); border-left:3px solid var(--before-pill); padding:8px; font-size:0.8rem; color:var(--before-text); margin-bottom:8px; font-style:italic;">
+          Before: &ldquo;I uploaded the code, but I don&rsquo;t know what is happening.&rdquo;
+        </div>
+        <div style="background:var(--after-bg); border-left:3px solid var(--after-pill); padding:8px; font-size:0.8rem; color:var(--after-text); font-style:italic;">
+          After: &ldquo;I can see the activity and know what to test next.&rdquo;
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. Explain the Product in Three Simple Benefits -->
+  <section id="benefits" style="margin-bottom:20px;">
+    <h2 style="font-size:1.6rem; color:var(--deep); text-align:center; margin-bottom:20px;">Why Learning ESP32 Feels Easier</h2>
+    
+    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:16px;">
+      
+      <!-- Start Faster -->
+      <div class="box-card" style="background:#fff; border:1px solid var(--line); box-shadow:var(--shadow);">
+        <div style="font-size:2rem; margin-bottom:12px;">&#x1F50C;</div>
+        <h3 style="font-size:1.2rem; color:var(--deep); margin-bottom:8px;">Plug In and Begin</h3>
+        <p style="font-size:0.95rem; color:var(--muted); margin-bottom:16px;">
+          Use USB-C, upload through Arduino IDE and begin basic experiments with built-in input and output tools.
+        </p>
+        <ul style="font-size:0.85rem; padding-left:16px; margin-bottom:16px; color:var(--ink);">
+          <li>USB Type-C</li>
+          <li>Familiar ESP32 workflow</li>
+          <li>Built-in button</li>
+          <li>Built-in buzzer</li>
+        </ul>
+        <details style="font-size:0.8rem; color:var(--purple); cursor:pointer;">
+          <summary style="font-weight:800;">View supported development tools</summary>
+          <div style="padding-top:8px; color:var(--muted);">Arduino IDE, MicroPython, ESP-IDF, and more.</div>
+        </details>
+      </div>
+
+      <!-- Understand Better (Most Prominent) -->
+      <div class="box-card" style="background:var(--soft-purple); border:2px solid var(--purple); box-shadow:0 8px 24px rgba(108,42,163,0.15);">
+        <div style="font-size:2rem; margin-bottom:12px;">&#x1F441;&#xFE0F;</div>
+        <h3 style="font-size:1.3rem; color:var(--purple); margin-bottom:8px; font-weight:900;">See What Your Code Is Doing</h3>
+        <p style="font-size:0.95rem; color:var(--ink); margin-bottom:16px; font-weight:600;">
+          Onboard GPIO and RX/TX indicators make input, output and communication activity easier to observe.
+        </p>
+        <ul style="font-size:0.85rem; padding-left:16px; margin-bottom:16px; color:var(--ink);">
+          <li>Multiple onboard GPIO activity indicators</li>
+          <li>RX/TX indicators</li>
+          <li>User button</li>
+          <li>Buzzer feedback</li>
+        </ul>
+        <div style="font-size:0.75rem; background:#fff; padding:8px; border-radius:6px; font-style:italic; color:var(--muted);">
+          The indicators help you observe activity, but they do not automatically diagnose every problem.
+        </div>
+      </div>
+
+      <!-- Build Further -->
+      <div class="box-card" style="background:#fff; border:1px solid var(--line); box-shadow:var(--shadow);">
+        <div style="font-size:2rem; margin-bottom:12px;">&#x1F680;</div>
+        <h3 style="font-size:1.2rem; color:var(--deep); margin-bottom:8px;">Keep Building as You Learn</h3>
+        <p style="font-size:0.95rem; color:var(--muted); margin-bottom:16px;">
+          Start with GPIO and sensors, then continue towards Wi-Fi, IoT dashboards, robotics and Final Year Projects.
+        </p>
+        <ul style="font-size:0.85rem; padding-left:16px; margin-bottom:0; color:var(--ink);">
+          <li>8MB flash</li>
+          <li>Wi-Fi &amp; Bluetooth</li>
+          <li>Maker Port</li>
+          <li>ESP32 ecosystem</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 4. A Simpler First ESP32 Experience -->
+  <section class="box-card" style="background:#fff; border:1px solid var(--line); margin-bottom:20px; box-shadow:var(--shadow);">
+    <h2 style="font-size:1.6rem; color:var(--deep); text-align:center; margin-bottom:20px;">A Simpler First ESP32 Experience</h2>
+    
+    <div style="display:flex; flex-wrap:wrap; gap:20px;">
+      <div style="flex:1; min-width:280px; background:var(--before-bg); border:1px solid var(--before-line); border-radius:10px; padding:16px; text-align:center;">
+        <h4 style="color:var(--before-text); margin-bottom:12px; font-size:1.1rem;">Normal ESP32 Beginner Setup</h4>
+        <div style="font-size:0.85rem; color:var(--muted); margin-bottom:12px;">
+          ESP32 board + Breadboard + External LED + Resistor + Push button + Buzzer + Jumper wires
+        </div>
+        <div style="font-weight:800; color:var(--before-text); font-size:0.95rem;">
+          More parts and wiring before the first basic experiment.
+        </div>
+      </div>
+      
+      <div style="flex:1; min-width:280px; background:var(--after-bg); border:1px solid var(--after-line); border-radius:10px; padding:16px; text-align:center;">
+        <h4 style="color:var(--after-text); margin-bottom:12px; font-size:1.1rem;">Maker ESP32</h4>
+        <div style="font-size:0.85rem; color:var(--muted); margin-bottom:12px;">
+          Maker ESP32 + USB-C cable + Built-in indicators + Built-in button + Built-in buzzer
+        </div>
+        <div style="font-weight:800; color:var(--after-text); font-size:0.95rem;">
+          Begin basic input and output experiments with fewer external parts.
+        </div>
+      </div>
+    </div>
+    <div style="text-align:center; font-size:0.8rem; color:var(--muted); margin-top:16px; font-style:italic;">
+      Note: External sensors, modules and wiring are still required for many projects.
+    </div>
+  </section>
+
+  <!-- 5. What Can I Build? -->
+  <section id="projects" style="margin-bottom:20px;">
+    <h2 style="font-size:1.6rem; color:var(--deep); text-align:center; margin-bottom:20px;">Start Small. Build Something Real.</h2>
+    
+    <div style="display:flex; flex-wrap:wrap; justify-content:center; align-items:center; gap:10px; margin-bottom:16px; font-size:0.9rem; font-weight:800; color:var(--purple);">
+      <span>First Upload</span> &rarr; <span>GPIO</span> &rarr; <span>Sensor</span> &rarr; <span>Wi-Fi</span> &rarr; <span>Real Project</span>
+    </div>
+
+    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr)); gap:12px;">
+      <div class="box-card" style="background:#fff; border:1px solid var(--line);">
+        <h4 style="color:var(--deep); margin-bottom:6px;">First GPIO Experiment</h4>
+        <p style="font-size:0.85rem; color:var(--muted); margin:0;">Learn HIGH and LOW while watching the onboard indicators.</p>
+      </div>
+      <div class="box-card" style="background:#fff; border:1px solid var(--line);">
+        <h4 style="color:var(--deep); margin-bottom:6px;">Button and Buzzer</h4>
+        <p style="font-size:0.85rem; color:var(--muted); margin:0;">Create a simple interactive input-and-output project.</p>
+      </div>
+      <div class="box-card" style="background:#fff; border:1px solid var(--line);">
+        <h4 style="color:var(--deep); margin-bottom:6px;">First Sensor</h4>
+        <p style="font-size:0.85rem; color:var(--muted); margin:0;">Read temperature, light, distance or another compatible sensor.</p>
+      </div>
+      <div class="box-card" style="background:#fff; border:1px solid var(--line);">
+        <h4 style="color:var(--deep); margin-bottom:6px;">IoT Dashboard</h4>
+        <p style="font-size:0.85rem; color:var(--muted); margin:0;">Connect to Wi-Fi and display sensor information online.</p>
+      </div>
+      <div class="box-card" style="background:var(--soft-purple); border:1px solid rgba(108,42,163,0.2);">
+        <h4 style="color:var(--purple); margin-bottom:6px;">FYP or Robotics Project</h4>
+        <p style="font-size:0.85rem; color:var(--ink); margin:0;">Continue using the same ESP32 platform for a larger academic or maker project.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. Your First 30 Minutes -->
+  <section class="box-card" style="background:#fff; border:1px solid var(--line); margin-bottom:20px; box-shadow:var(--shadow);">
+    <h2 style="font-size:1.6rem; color:var(--deep); text-align:center; margin-bottom:20px;">What Can You Do in Your First 30 Minutes?</h2>
+    
+    <div class="transformation-strip" style="box-shadow:none; border:none; background:transparent; padding:0;">
+      <div class="trans-step trans-maker" style="background:#fff; border:2px solid var(--line); color:var(--ink);">
+        <strong>1. Connect</strong><br><span style="font-size:0.8rem;">Plug in using USB-C.</span>
+      </div>
+      <div class="trans-arrow">&rarr;</div>
+      <div class="trans-step trans-maker" style="background:#fff; border:2px solid var(--line); color:var(--ink);">
+        <strong>2. Upload</strong><br><span style="font-size:0.8rem;">Open Arduino IDE and upload the first example.</span>
+      </div>
+      <div class="trans-arrow">&rarr;</div>
+      <div class="trans-step trans-maker" style="background:#fff; border:2px solid var(--line); color:var(--ink);">
+        <strong>3. Observe</strong><br><span style="font-size:0.8rem;">Watch the GPIO indicators respond.</span>
+      </div>
+      <div class="trans-arrow">&rarr;</div>
+      <div class="trans-step trans-maker" style="background:#fff; border:2px solid var(--line); color:var(--ink);">
+        <strong>4. Interact</strong><br><span style="font-size:0.8rem;">Press the user button and test the buzzer.</span>
+      </div>
+      <div class="trans-arrow">&rarr;</div>
+      <div class="trans-step trans-maker" style="background:var(--soft-green); border:2px solid var(--after-line); color:var(--after-text);">
+        <strong>5. Continue</strong><br><span style="font-size:0.8rem;">Connect your first compatible sensor.</span>
+      </div>
+    </div>
+    
+    <div style="text-align:center; margin-top:20px;">
+      <button class="btn-nav" style="background:#f3f4f6; color:var(--muted); cursor:not-allowed;" disabled>Follow the Beginner Quick-Start Guide (Guide Coming Soon)</button>
+    </div>
+  </section>
+
+  <!-- 7. Simplify the Price Section -->
+  <section class="box-card" style="background:var(--soft-purple); border:1px solid #ede9fe; margin-bottom:20px; text-align:center;">
+    <h2 style="font-size:1.6rem; color:var(--deep); margin-bottom:12px;">What Do You Get for RM39?</h2>
+    
+    <div style="font-size:1.2rem; font-weight:900; color:var(--purple); margin-bottom:8px;">Maker ESP32 &middot; Planned RRP: RM39</div>
+    <p style="font-size:0.95rem; color:var(--ink); margin-bottom:16px; max-width:600px; margin-left:auto; margin-right:auto;">
+      Approximately RM10 more than the current NodeMCU ESP32, with added tools designed to make learning and testing easier.
+    </p>
+    
+    <div style="display:inline-block; text-align:left; background:#fff; padding:16px 24px; border-radius:12px; margin-bottom:16px;">
+      <ul style="font-size:0.9rem; color:var(--ink); margin:0; padding-left:16px;">
+        <li style="margin-bottom:6px;">USB Type-C</li>
+        <li style="margin-bottom:6px;">More flash memory (8MB)</li>
+        <li style="margin-bottom:6px;">Multiple onboard GPIO activity indicators</li>
+        <li style="margin-bottom:6px;">RX/TX indicators</li>
+        <li style="margin-bottom:6px;">Built-in button and buzzer</li>
+        <li>Maker Port and Cytron-supported resources</li>
+      </ul>
+    </div>
+    
+    <div style="font-size:1.05rem; font-weight:800; color:var(--deep);">
+      A small step up in price for a clearer and more supported ESP32 learning experience.
+    </div>
+  </section>
+
+  <!-- 8. Final CTA -->
+  <section class="box-card" style="background:#fff; border:1px solid var(--line); margin-bottom:20px; box-shadow:var(--shadow); text-align:center; padding:30px 20px;">
+    <h2 style="font-size:1.8rem; color:var(--deep); margin-bottom:12px;">Ready to Start Your ESP32 Journey?</h2>
+    <p style="font-size:1rem; color:var(--muted); max-width:600px; margin:0 auto 24px;">
+      Begin with the basics, understand what your code is doing and continue towards your first real project.
+    </p>
+    
+    <div style="display:flex; justify-content:center; gap:16px; margin-bottom:24px; flex-wrap:wrap;">
+      <a href="#" class="btn-nav btn-print-primary" style="font-size:1.1rem; padding:14px 28px;">Explore Maker ESP32</a>
+      <button class="btn-nav" style="font-size:1.1rem; padding:14px 28px; background:#f3f4f6; color:var(--muted); cursor:not-allowed;" disabled>Get the Beginner Guide</button>
+    </div>
+    
+    <div style="display:inline-block; border:1px solid var(--line); border-radius:8px; padding:12px 20px; background:var(--bg);">
+      <span style="color:var(--deep); font-weight:900;">From First Lesson to Final Project</span><br>
+      <span style="color:var(--purple); font-weight:800; font-size:0.9rem;">Start Faster &middot; Understand Better &middot; Build Further</span>
+    </div>
+  </section>
+
+  <!-- 9. Optional Technical Details -->
+  <details style="background:#fff; border:1px solid var(--line); border-radius:8px; padding:12px 16px; margin-bottom:20px; font-size:0.85rem; color:var(--ink);">
+    <summary style="font-weight:800; color:var(--deep); cursor:pointer; font-size:1rem;">View Technical Details</summary>
+    <div style="padding-top:12px;">
+      <ul style="margin:0 0 12px; padding-left:16px;">
+        <li>ESP32-WROOM-32E-N8 module</li>
+        <li>8MB flash</li>
+        <li>520KB SRAM</li>
+        <li>Wi-Fi (2.4GHz)</li>
+        <li>Bluetooth Classic and BLE</li>
+        <li>30 GPIOs</li>
+        <li>USB Type-C</li>
+        <li>Maker Port (Qwiic/STEMMA QT compatible)</li>
+        <li>Arduino IDE &amp; ESP-IDF support</li>
+        <li>Dimensions: ~58mm &times; 28.4mm</li>
+        <li>Power requirements: 5V via USB or VIN</li>
+      </ul>
+      <div style="background:var(--soft-blue); padding:10px; border-radius:6px; font-style:italic;">
+        Powered by an ESP32-WROOM-32E wireless module type-approved by SIRIM under Cytron Technologies.<br>
+        <span style="font-size:0.75rem; color:var(--muted);">The type approval applies to the wireless module, not the complete Maker ESP32 board.</span>
+      </div>
+    </div>
+  </details>
+
+  <!-- Internal Marketing Notes (Collapsed) -->
+  <details style="background:var(--bg); border:1px dashed var(--light-muted); border-radius:8px; padding:12px 16px; margin-bottom:20px; font-size:0.85rem;">
+    <summary style="font-weight:800; color:var(--muted); cursor:pointer;">Internal Marketing Notes &mdash; For Cytron Internal Reference</summary>
+    <div style="padding-top:16px; opacity:0.8;">
+      <!-- Original Internal Content Injected Here -->
+      <!-- Transformation Strip -->
+  <div class="transformation-strip">
+    <div class="trans-step trans-before">
+      <strong>BEFORE:</strong> &ldquo;I uploaded the code, but I do not know what is happening.&rdquo;
+    </div>
+    <div class="trans-arrow">&rarr;</div>
+    <div class="trans-step trans-maker">
+      <strong>WITH MAKER ESP32:</strong> Observe GPIO LEDs, test button/buzzer &amp; follow structured guide.
+    </div>
+    <div class="trans-arrow">&rarr;</div>
+    <div class="trans-step trans-outcome">
+      <strong>FUTURE OUTCOME:</strong> Start with a simple lesson and continue towards an IoT project for FYP.
+    </div>
+  </div>
+
+  <!-- 9-BOX ONE-PAGE MARKETING PLAN GRID -->
+  <div class="nine-box-grid">
+
+    <!-- BOX 1: MY TARGET MARKET -->
+    <div class="box-card phase-before">
+      <div class="box-stage-tag"><span>BEFORE &middot; PROSPECT</span><span>BOX 1</span></div>
+      <div class="box-title">1. My Target Market</div>
+      <div>
+        <strong>Aiman Represents:</strong> Tertiary &amp; polytechnic students, mechatronics/engineering diploma learners, new makers switching from Arduino to ESP32.<br>
+        <strong>What He Currently Does:</strong> Copies/modifies tutorial code in Arduino IDE, experiments with LEDs &amp; sensors, asks Telegram groups when stuck.<br>
+        <strong>Jobs Trying to Complete:</strong> Install ESP32 board package, upload first code, test button/buzzer, read sensor values, connect to Wi-Fi, build IoT dashboard.<br>
+        <strong>Main Concerns:</strong> Driver setup, wrong COM port, upload failures, loose USB, code vs hardware ambiguity, buying a board that becomes limited.<br>
+        <div style="font-size:0.72rem; margin-top:4px; opacity:0.9;">
+          <em>Survey Proof:</em> ESP32 Telegram poll shows beginners as largest segment at <strong>42% (6/14)</strong>. <em>(Directional community sample).</em>
+        </div>
+      </div>
+    </div>
+
+    <!-- BOX 2: MY MESSAGE TO MY TARGET MARKET -->
+    <div class="box-card phase-before">
+      <div class="box-stage-tag"><span>BEFORE &middot; PROSPECT</span><span>BOX 2</span></div>
+      <div class="box-title">2. My Message to My Target Market</div>
+      <div>
+        <div style="font-weight:900; color:var(--before-text); margin-bottom:4px;">Your First ESP32 Project Should Feel Clear, Not Confusing</div>
+        <p style="font-size:0.74rem; margin-bottom:6px;">Maker ESP32 gives Aiman visible GPIO activity, built-in I/O tools, USB-C convenience, and Cytron learning resources.</p>
+        <ul class="box-list">
+          <li><strong>Start Faster:</strong> USB-C, NodeMCU form factor, built-in button &amp; buzzer, getting-started guides.</li>
+          <li><strong>Understand Better:</strong> 14 GPIO LEDs, RX/TX LEDs, button, buzzer, mute switch, immediate feedback.</li>
+          <li><strong>Build Further:</strong> 8MB flash, Wi-Fi/BLE, Maker Port, dual-core LX6, ESP32 ecosystem.</li>
+        </ul>
+        <div style="font-size:0.72rem; background:#fff; padding:4px; border-radius:4px; border:1px solid #fecaca; margin-bottom:4px;">
+          <em>Compliance:</em> Powered by an ESP32-WROOM-32E wireless module type-approved by SIRIM under Cytron Technologies. <em>(Approval applies to module).</em>
+        </div>
+        <div class="pill-highlight" style="color:var(--before-text);">Buying Trigger: "I can start learning without wiring every component first."</div>
+      </div>
+    </div>
+
+    <!-- BOX 3: THE MEDIA I WILL USE -->
+    <div class="box-card phase-before">
+      <div class="box-stage-tag"><span>BEFORE &middot; PROSPECT</span><span>BOX 3</span></div>
+      <div class="box-title">3. The Media I Will Use</div>
+      <div>
+        <strong>Discovery Channels:</strong> TikTok, YouTube Shorts, YouTube beginner tutorials, ESP32/STEM Telegram groups, polytechnic &amp; uni engineering clubs.<br>
+        <strong>Research Channels:</strong> Product page, NodeMCU vs Maker ESP32 comparison, pinout diagram, FAQ, troubleshooting guide, customer reviews.<br>
+        <strong>Content Formats:</strong> First upload video, GPIO HIGH/LOW demo, built-in button/buzzer test, sensor-to-dashboard journey, "Five Common ESP32 Mistakes".<br>
+        <div style="font-weight:800; color:var(--before-text); margin-top:4px;">Main Awareness Hook:</div>
+        <div style="font-style:italic; font-size:0.75rem;">&ldquo;Your code is running. Can you see what it is doing?&rdquo;</div>
+      </div>
+    </div>
+
+    <!-- BOX 4: MY LEAD CAPTURE SYSTEM -->
+    <div class="box-card phase-during">
+      <div class="box-stage-tag"><span>DURING &middot; LEAD</span><span>BOX 4</span></div>
+      <div class="box-title">4. My Lead Capture System</div>
+      <div>
+        <strong>Main Lead Magnet:</strong> <em>Maker ESP32 Beginner Quick-Start Guide</em> (Arduino IDE setup, board package, COM selection, first upload, GPIO test, button/buzzer test, first sensor).<br>
+        <strong>Secondary Lead Magnet:</strong> <em>Find Your First ESP32 Project</em> (Selects interest &rarr; receives tailored tutorial, code &amp; launch update).<br>
+        <strong>Lead Entry Points:</strong> Telegram poll, beginner quiz, guide download, sample code, "Notify Me at Launch" form.<br>
+        <strong>Info Collected:</strong> Name, email, institution, course, main challenge.<br>
+        <div class="pill-highlight" style="color:var(--during-text);">Tags: Persona|Beginner Learner &middot; Use Case|Learning &middot; Interest|Maker ESP32</div>
+      </div>
+    </div>
+
+    <!-- BOX 5: MY LEAD NURTURING SYSTEM -->
+    <div class="box-card phase-during">
+      <div class="box-stage-tag"><span>DURING &middot; LEAD</span><span>BOX 5</span></div>
+      <div class="box-title">5. My Lead Nurturing System</div>
+      <div>
+        <div style="font-weight:800; color:var(--during-text); margin-bottom:4px;">Nurturing Theme: From First Upload to First Connected Project</div>
+        <ol class="box-list" style="padding-left:14px;">
+          <li><strong>Msg 1:</strong> Why Can Learning ESP32 Feel Confusing?</li>
+          <li><strong>Msg 2:</strong> Upload Your First ESP32 Program</li>
+          <li><strong>Msg 3:</strong> See What Your Code Is Doing (GPIO &amp; LEDs)</li>
+          <li><strong>Msg 4:</strong> Connect Your First Sensor (Maker Port)</li>
+          <li><strong>Msg 5:</strong> From First Sensor to IoT Dashboard</li>
+          <li><strong>Msg 6:</strong> Maker ESP32 Launches This Hari Malaysia</li>
+        </ol>
+      </div>
+    </div>
+
+    <!-- BOX 6: MY SALES CONVERSION STRATEGY -->
+    <div class="box-card phase-during">
+      <div class="box-stage-tag"><span>DURING &middot; LEAD</span><span>BOX 6</span></div>
+      <div class="box-title">6. My Sales Conversion Strategy</div>
+      <div>
+        <strong>Answering Objections:</strong> Beginner-friendly? Arduino IDE supported? Why RM10 more than NodeMCU ESP32 (RM29 vs RM39)? Will I outgrow it?<br>
+        <strong>RM10 Value Justification:</strong> USB-C + 8MB Flash (vs 4MB) + 14 GPIO LEDs + RX/TX LEDs + User Button + Buzzer + Mute Switch + Maker Port + Cytron Tutorials.<br>
+        <div style="font-style:italic; font-size:0.74rem; background:#fff; padding:4px 6px; border-radius:4px; border-left:3px solid var(--during-pill); margin:4px 0;">
+          &ldquo;Pay slightly more for an ESP32 board that makes learning more visible, guided and easier to continue with.&rdquo;
+        </div>
+        <strong>Launch Offer:</strong> Planned RRP RM39 (~20% off launch promo ~RM31.20 pending commercial approval).
+      </div>
+    </div>
+
+    <!-- BOX 7: HOW I DELIVER A WORLD-CLASS EXPERIENCE -->
+    <div class="box-card phase-after">
+      <div class="box-stage-tag"><span>AFTER &middot; CUSTOMER</span><span>BOX 7</span></div>
+      <div class="box-title">7. How I Deliver World-Class Experience</div>
+      <div>
+        <strong>First-Hour Onboarding Journey:</strong><br>
+        1. <strong>Connect:</strong> USB Type-C cable &amp; power check.<br>
+        2. <strong>Install:</strong> Arduino IDE &amp; ESP32 board package.<br>
+        3. <strong>Upload:</strong> First example code &amp; COM selection.<br>
+        4. <strong>Observe:</strong> Run GPIO code &amp; watch 14 LEDs &amp; RX/TX.<br>
+        5. <strong>Interact:</strong> Test onboard button, buzzer &amp; mute switch.<br>
+        6. <strong>Build:</strong> Connect Maker Port sensor &amp; send Wi-Fi data.<br>
+        <div class="pill-highlight" style="color:var(--after-text);">Promise: First hour spent learning what board can do, not searching setup info.</div>
+      </div>
+    </div>
+
+    <!-- BOX 8: HOW I INCREASE CUSTOMER LIFETIME VALUE -->
+    <div class="box-card phase-after">
+      <div class="box-stage-tag"><span>AFTER &middot; CUSTOMER</span><span>BOX 8</span></div>
+      <div class="box-title">8. How I Increase Lifetime Value</div>
+      <div>
+        <strong>Learning Progression:</strong> First Upload &rarr; GPIO Output &rarr; User Button &rarr; Buzzer &rarr; Sensor &rarr; Wi-Fi &rarr; IoT Dashboard &rarr; FYP/Robotics.<br>
+        <strong>Relevant Next Products:</strong> Sensor starter packs, Maker Port modules, OLED displays, jumper wires, relays, robotics kits, power supplies.<br>
+        <strong>Customer Bundles:</strong> "Start Learning ESP32", "First Sensor Project Pack", "Build Your First IoT Project", "FYP Starter Pack".<br>
+        <div style="font-size:0.72rem; font-style:italic; margin-top:4px;">Principle: Do not only sell another component. Help him complete the next stage of his learning journey.</div>
+      </div>
+    </div>
+
+    <!-- BOX 9: HOW I ORCHESTRATE AND STIMULATE REFERRALS -->
+    <div class="box-card phase-after">
+      <div class="box-stage-tag"><span>AFTER &middot; CUSTOMER</span><span>BOX 9</span></div>
+      <div class="box-title">9. How I Stimulate Referrals</div>
+      <div>
+        <strong>What Aiman Shares:</strong> First successful upload, first sensor reading, first Wi-Fi project, first IoT dashboard, FYP progress.<br>
+        <div style="font-style:italic; font-size:0.74rem; background:#fff; padding:4px 6px; border-radius:4px; border-left:3px solid var(--after-pill); margin:4px 0;">
+          &ldquo;Completed your first Maker ESP32 project? Share it and help another beginner take their first step.&rdquo;
+        </div>
+        <strong>Recognition &amp; Rewards:</strong> Social media reposts, community badges, tutorial contributor credit, Hari Malaysia beginner showcase feature.
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Footer Section -->
+    </div>
+  </details>
+
+  <footer class="footer-card no-print" style="text-align:center;">
+    <div>CYTRON Technologies &copy; 2026 &middot; Simplified Customer Persona Page</div>
+  </footer>
+
+</div>
+</body>
+</html>
