@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Maker ESP32 — Launch Roadmap</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;1,700;1,800&family=Permanent+Marker&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --indigo:#2B1682;
+    --indigo-light:#4A2FA8;
+    --indigo-tint:#EFE9F7;
+    --teal:#0F6E56;
+    --teal-tint:#E1F5EE;
+    --coral:#D85A30;
+    --coral-tint:#FAECE7;
+    --gray:#5F5E5A;
+    --gray-tint:#F1EFE8;
+    --ink:#1A1A1A;
+    --muted:#6B6975;
+    --line:#E4E1EE;
+    --bg:#FFFFFF;
+    --bg-alt:#F8F6FC;
+    --frame:#141414;
+    --radius:16px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0; font-family:'Poppins',sans-serif; color:var(--ink); background:var(--bg);
+    -webkit-font-smoothing:antialiased;
+  }
+  .wordmark{font-family:'Permanent Marker',cursive; color:var(--indigo); letter-spacing:0.5px;}
+  a{color:inherit;}
+
+  /* ---- NAV ---- */
+  nav{
+    position:sticky; top:0; z-index:50; background:rgba(255,255,255,0.92); backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line); padding:14px 28px; display:flex; align-items:center;
+    justify-content:space-between; flex-wrap:wrap; gap:12px;
+  }
+  .nav-left{display:flex; align-items:center; gap:10px;}
+  .logo-badge{
+    width:34px; height:34px; border-radius:50%; background:#fff; border:2px solid var(--indigo);
+    display:flex; align-items:center; justify-content:center; font-weight:800; color:var(--indigo); font-size:16px;
+  }
+  .nav-title{font-weight:700; font-size:15px;}
+  .nav-links{display:flex; gap:4px; flex-wrap:wrap;}
+  .nav-links button{
+    background:none; border:none; font-family:'Poppins'; font-size:13px; font-weight:600; color:var(--muted);
+    padding:8px 14px; border-radius:20px; cursor:pointer; transition:all .2s;
+  }
+  .nav-links button:hover{background:var(--indigo-tint); color:var(--indigo);}
+  .nav-links button.active{background:var(--indigo); color:#fff;}
+  .countdown-chip{
+    background:var(--coral-tint); color:var(--coral); font-weight:700; font-size:12.5px;
+    padding:7px 14px; border-radius:20px; white-space:nowrap;
+  }
+
+  /* ---- HERO ---- */
+  .hero{
+    padding:64px 28px 40px; max-width:1180px; margin:0 auto; position:relative;
+  }
+  .hero-bg-pattern{
+    position:absolute; top:0; right:0; width:60%; height:100%; opacity:0.5; pointer-events:none; z-index:0;
+  }
+  .hero-inner{position:relative; z-index:1;}
+  .eyebrow{
+    font-size:12.5px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:var(--indigo-light);
+    margin-bottom:10px;
+  }
+  h1.hero-title{font-size:56px; margin:0 0 6px; line-height:1.05;}
+  h1.hero-title .big{font-size:64px;}
+  .hero-sub{font-size:17px; color:var(--muted); max-width:640px; margin:14px 0 28px; line-height:1.6;}
+  .stat-row{display:grid; grid-template-columns:repeat(4,1fr); gap:14px; margin-bottom:44px;}
+  .stat-card{
+    background:var(--gray-tint); border-radius:12px; padding:16px 18px;
+  }
+  .stat-card .val{font-weight:800; font-size:18px; color:var(--indigo);}
+  .stat-card .label{font-size:12px; color:var(--muted); margin-top:3px;}
+
+  /* ---- SPINE / TIMELINE NAV ---- */
+  .spine-wrap{margin:0 0 20px;}
+  svg#spine{width:100%; height:auto; display:block; cursor:default;}
+  .spine-node{cursor:pointer;}
+  .spine-node circle{transition:r .2s;}
+  .spine-node:hover circle{r:34;}
+  .spine-label{font-family:'Poppins'; font-weight:700; font-size:15px; fill:var(--ink);}
+  .spine-date{font-family:'Poppins'; font-weight:500; font-size:11.5px; fill:var(--muted);}
+  .spine-num{font-family:'Poppins'; font-weight:800; font-size:20px; fill:#fff;}
+
+  /* ---- PHASE SECTIONS ---- */
+  .phase{
+    padding:70px 28px; border-top:1px solid var(--line);
+  }
+  .phase-inner{max-width:1180px; margin:0 auto;}
+  .phase-head{display:flex; align-items:baseline; gap:16px; flex-wrap:wrap; margin-bottom:6px; row-gap:4px;}
+  .phase-tag{
+    display:inline-flex; align-items:center; justify-content:center; width:40px; height:40px; border-radius:50%;
+    color:#fff; font-weight:800; font-size:17px; flex:none;
+  }
+  .phase h2{font-size:32px; margin:0;}
+  .phase-dates{font-size:14px; font-weight:600; color:var(--muted); margin-left:2px;}
+  .phase-goal{font-size:16px; color:var(--muted); margin:8px 0 36px; max-width:680px; line-height:1.6;}
+
+  .p1{background:var(--indigo-tint);} .p1 .phase-tag{background:var(--indigo);}
+  .p2{background:var(--teal-tint);} .p2 .phase-tag{background:var(--teal);}
+  .p3{background:var(--coral-tint);} .p3 .phase-tag{background:var(--coral);}
+  .p4{background:var(--gray-tint);} .p4 .phase-tag{background:var(--gray);}
+
+  /* week accordions */
+  details.week{
+    background:#fff; border-radius:var(--radius); margin-bottom:12px; overflow:hidden;
+    box-shadow:0 1px 3px rgba(20,20,20,0.06);
+  }
+  details.week summary{
+    padding:18px 22px; font-weight:700; font-size:15.5px; cursor:pointer; list-style:none;
+    display:flex; justify-content:space-between; align-items:center;
+  }
+  details.week summary::-webkit-details-marker{display:none;}
+  details.week summary .chev{transition:transform .25s; color:var(--muted); font-size:14px;}
+  details.week[open] summary .chev{transform:rotate(90deg);}
+  .week-body{padding:0 22px 20px;}
+  .item-row{
+    display:flex; justify-content:space-between; gap:16px; padding:12px 0; border-top:1px solid var(--line);
+    font-size:14px; align-items:flex-start;
+  }
+  .item-row:first-child{border-top:none;}
+  .item-what{flex:1; line-height:1.5;}
+  .item-owner{
+    flex:none; font-size:12px; font-weight:700; color:var(--indigo); background:var(--indigo-tint);
+    padding:5px 10px; border-radius:20px; white-space:nowrap; height:fit-content;
+  }
+  .item-note{font-size:13px; color:var(--muted); margin-top:4px; line-height:1.5;}
+
+  /* callout cards */
+  .callout{
+    background:#fff; border-radius:var(--radius); padding:22px 24px; margin-bottom:14px;
+    box-shadow:0 1px 3px rgba(20,20,20,0.06);
+  }
+  .callout h3{margin:0 0 12px; font-size:16.5px;}
+  .callout ul{margin:0; padding-left:20px; font-size:14px; line-height:1.75; color:var(--ink);}
+  .callout p{font-size:14px; line-height:1.7; margin:6px 0; color:var(--ink);}
+  .badge-risk{
+    display:inline-block; font-size:11.5px; font-weight:700; color:var(--coral); background:var(--coral-tint);
+    padding:3px 10px; border-radius:20px; margin-bottom:8px;
+  }
+  .badge-resolved{
+    display:inline-block; font-size:11.5px; font-weight:700; color:var(--teal); background:var(--teal-tint);
+    padding:3px 10px; border-radius:20px; margin-bottom:8px;
+  }
+
+  /* announcement sequence */
+  .seq-list{background:#fff; border-radius:var(--radius); overflow:hidden; box-shadow:0 1px 3px rgba(20,20,20,0.06);}
+  .seq-item{
+    display:grid; grid-template-columns:110px 90px 1fr; gap:16px; padding:16px 22px; align-items:center;
+    border-top:1px solid var(--line); font-size:14px;
+  }
+  .seq-item:first-child{border-top:none;}
+  .seq-item.launch{background:var(--teal-tint);}
+  .seq-countdown{font-size:12px; font-weight:700; color:var(--teal); text-transform:uppercase; letter-spacing:.4px;}
+  .seq-date{font-weight:700; color:var(--ink);}
+  .seq-content strong{display:block; margin-bottom:2px;}
+  .seq-purpose{color:var(--muted); font-size:13px;}
+
+  /* message card */
+  .message-card{
+    background:#fff; border-left:4px solid var(--coral); border-radius:10px; padding:18px 20px;
+    font-size:13.5px; line-height:1.7; color:var(--ink); font-style:italic; margin-top:10px;
+  }
+
+  /* phase3 checklist highlight */
+  .highlight-box{
+    background:var(--coral); color:#fff; border-radius:var(--radius); padding:24px 26px; margin-bottom:24px;
+    display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:14px;
+  }
+  .highlight-box .time{font-size:30px; font-weight:800;}
+  .highlight-box .desc{font-size:14px; opacity:0.92; max-width:480px;}
+
+  table.mini{width:100%; border-collapse:collapse; font-size:13.5px;}
+  table.mini th{text-align:left; color:var(--muted); font-weight:600; font-size:12px; text-transform:uppercase; letter-spacing:.3px; padding:8px 10px; border-bottom:1px solid var(--line);}
+  table.mini td{padding:10px; border-bottom:1px solid var(--line);}
+
+  .status-pill{
+    display:inline-block; font-size:11px; font-weight:700; padding:3px 10px; border-radius:20px;
+    background:var(--gray-tint); color:var(--gray);
+  }
+
+  footer{
+    padding:40px 28px; text-align:center; color:var(--muted); font-size:13px; border-top:1px solid var(--line);
+  }
+
+  @media(max-width:820px){
+    .hero-title{font-size:38px !important;}
+    h1.hero-title .big{font-size:44px !important;}
+    .stat-row{grid-template-columns:repeat(2,1fr);}
+    .nav-links{display:none;}
+    .seq-item{grid-template-columns:1fr; gap:4px;}
+    .phase h2{font-size:26px;}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-left">
+    <div class="logo-badge">C</div>
+    <div class="nav-title">Maker ESP32 · Launch Roadmap</div>
+  </div>
+  <div class="nav-links" id="navLinks">
+    <button data-target="phase1">Phase 1</button>
+    <button data-target="phase2">Phase 2</button>
+    <button data-target="phase3">Phase 3</button>
+    <button data-target="phase4">Phase 4</button>
+  </div>
+  <div class="countdown-chip" id="countdownChip">—</div>
+</nav>
+
+<section class="hero">
+  <svg class="hero-bg-pattern" viewBox="0 0 600 500" xmlns="http://www.w3.org/2000/svg">
+    <g stroke="#C9BEEA" stroke-width="1" fill="none" opacity="0.6">
+      <circle cx="520" cy="80" r="40"/><circle cx="480" cy="180" r="22"/><circle cx="560" cy="220" r="14"/>
+      <line x1="520" y1="120" x2="520" y2="180"/><line x1="480" y1="202" x2="480" y2="260"/>
+      <circle cx="420" cy="60" r="3" fill="#C9BEEA"/><circle cx="560" cy="120" r="3" fill="#C9BEEA"/>
+      <circle cx="440" cy="280" r="3" fill="#C9BEEA"/><circle cx="520" cy="340" r="3" fill="#C9BEEA"/>
+      <line x1="380" y1="40" x2="560" y2="40"/><line x1="380" y1="40" x2="380" y2="140"/>
+    </g>
+  </svg>
+  <div class="hero-inner">
+    <div class="eyebrow">Internal planning reference</div>
+    <h1 class="hero-title"><span class="wordmark big">Maker ESP32</span><br>Launch Roadmap</h1>
+    <p class="hero-sub">From first lesson to final project — the complete four-phase plan, from pre-launch prep through post-launch growth. Tap a phase below, or on the timeline, to jump straight in.</p>
+
+    <div class="stat-row">
+      <div class="stat-card"><div class="val">16 Sep 2026, 3:00 PM</div><div class="label">Launch (confirmed)</div></div>
+      <div class="stat-card"><div class="val">20% off · 16–29 Sep</div><div class="label">Launch offer, automatic</div></div>
+      <div class="stat-card"><div class="val">First-time ESP32 learners</div><div class="label">Primary audience</div></div>
+      <div class="stat-card"><div class="val">Malaysia-first</div><div class="label">SG / TH / VN follow post-launch</div></div>
+    </div>
+
+    <div class="spine-wrap">
+      <svg id="spine" viewBox="0 0 1180 190" xmlns="http://www.w3.org/2000/svg">
+        <path d="M 60 150 C 300 150, 340 40, 590 40 S 880 150, 1120 40" stroke="#2B1682" stroke-width="4" fill="none" stroke-linecap="round"/>
+        <polygon points="1120,40 1104,32 1104,48" fill="#2B1682"/>
+
+        <g class="spine-node" data-target="phase1">
+          <circle cx="60" cy="150" r="28" fill="#2B1682"/>
+          <text x="60" y="157" text-anchor="middle" class="spine-num">1</text>
+          <text x="60" y="196" text-anchor="middle" class="spine-label">Pre-launch</text>
+          <text x="60" y="212" text-anchor="middle" class="spine-date">10 Aug – 1 Sep</text>
+        </g>
+        <g class="spine-node" data-target="phase2">
+          <circle cx="450" cy="63" r="28" fill="#0F6E56"/>
+          <text x="450" y="70" text-anchor="middle" class="spine-num">2</text>
+          <text x="450" y="16" text-anchor="middle" class="spine-label">Run-up</text>
+          <text x="450" y="108" text-anchor="middle" class="spine-date">2 – 15 Sep</text>
+        </g>
+        <g class="spine-node" data-target="phase3">
+          <circle cx="760" cy="63" r="28" fill="#D85A30"/>
+          <text x="760" y="70" text-anchor="middle" class="spine-num">3</text>
+          <text x="760" y="16" text-anchor="middle" class="spine-label">Launch Window</text>
+          <text x="760" y="108" text-anchor="middle" class="spine-date">16 – 29 Sep</text>
+        </g>
+        <g class="spine-node" data-target="phase4">
+          <circle cx="1120" cy="150" r="28" fill="#5F5E5A"/>
+          <text x="1120" y="157" text-anchor="middle" class="spine-num">4</text>
+          <text x="1120" y="196" text-anchor="middle" class="spine-label">Post-launch</text>
+          <text x="1120" y="212" text-anchor="middle" class="spine-date">30 Sep onward</text>
+        </g>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PHASE 1 ===================== -->
+<section class="phase p1" id="phase1">
+  <div class="phase-inner">
+    <div class="phase-head">
+      <div class="phase-tag">1</div>
+      <h2>Pre-launch</h2>
+      <div class="phase-dates">10 Aug – 1 Sep</div>
+    </div>
+    <p class="phase-goal">Get every asset, relationship, and piece of proof in place before any promise goes public — nothing announced before it's real.</p>
+
+    <details class="week" open>
+      <summary>Week 1 · 10–16 Aug <span class="chev">▸</span></summary>
+      <div class="week-body">
+        <div class="item-row"><div class="item-what">Lecturer shortlist finalized + first outreach sent</div><div class="item-owner">Marketing Team</div></div>
+        <div class="item-row"><div class="item-what">GPIO demo video brief + shoot date locked</div><div class="item-owner">Marketing + Creative</div></div>
+        <div class="item-row"><div class="item-what">Product page brief (infographic + FAQ structure)</div><div class="item-owner">Commerce Team</div></div>
+        <div class="item-row"><div class="item-what">Training partner/distributor early heads-up</div><div class="item-owner">EDU MY</div></div>
+      </div>
+    </details>
+
+    <details class="week">
+      <summary>Week 2 · 17–23 Aug <span class="chev">▸</span></summary>
+      <div class="week-body">
+        <div class="item-row"><div class="item-what">Lecturer follow-up + ship boards to confirmed yeses<div class="item-note">Board still in production — ship date corrected, see Week 3</div></div><div class="item-owner">Marketing Team</div></div>
+        <div class="item-row"><div class="item-what">Film GPIO demo video</div><div class="item-owner">Marketing + Creative</div></div>
+        <div class="item-row"><div class="item-what">Comparison infographic + product page development</div><div class="item-owner">Commerce Team</div></div>
+        <div class="item-row"><div class="item-what">Getting Started guide</div><div class="item-owner">Commerce Team (intern)</div></div>
+        <div class="item-row"><div class="item-what">Tutorial revamp — prep track begins, 5/week</div><div class="item-owner">Marketing Team</div></div>
+      </div>
+    </details>
+
+    <details class="week">
+      <summary>Week 3 · 24 Aug – 1 Sep <span class="chev">▸</span></summary>
+      <div class="week-body">
+        <div class="item-row"><div class="item-what">GPIO demo video finalized, approved<div class="item-note">Team sign-off, low risk</div></div><div class="item-owner">Creative + Marketing</div></div>
+        <div class="item-row"><div class="item-what">Product page, FAQ, core docs published<div class="item-note">"Enabled but hidden" — link-only until launch</div></div><div class="item-owner">Commerce Team</div></div>
+        <div class="item-row"><div class="item-what">NodeMCU tutorial updates<div class="item-note">Ongoing, 5/week</div></div><div class="item-owner">Marketing Team</div></div>
+        <div class="item-row"><div class="item-what">Lecturer feedback/quotes captured<div class="item-note"><strong>Timing shifted:</strong> boards ship 24–28 Aug (production delay), so feedback capture realistically moves into Phase 2. WhatsApp contact ongoing → formal "reviewer" invite once shipped → 6 of 15 lecturers confirmed so far.</div></div><div class="item-owner">Marketing Team</div></div>
+        <div class="item-row"><div class="item-what">Stock allocation + pricing confirmed<div class="item-note"><strong>Confirmed:</strong> MY 200 · INT 50 · TH 50 · SG 50 · VN 20 = 370 commercial (+30 MY EDU = 400 total). Regional pricing (SG/TH/VN) still to verify.</div></div><div class="item-owner">EDU MY</div></div>
+        <div class="item-row"><div class="item-what">Teaser content published (end of week)<div class="item-note">No product reveal — curiosity only</div></div><div class="item-owner">Marketing Team</div></div>
+      </div>
+    </details>
+
+    <div class="callout" style="margin-top:24px;">
+      <h3>📚 Tutorial revamp <span style="font-weight:400; color:var(--muted); font-size:13px;">— spans Phase 1–3</span></h3>
+      <ul>
+        <li><strong>30 tutorials</strong> total (29 Ready + 1 Checked), reprioritized by prep effort + product-fit</li>
+        <li><strong>Prep:</strong> 5/week, weekdays, started 3 Aug → all 30 done by ~11 Sep</li>
+        <li><strong>Publish:</strong> 1/day, daily, 1 Sep → 30 Sep — 15 before launch, 15 after (one lands on launch day itself)</li>
+      </ul>
+      <span class="badge-resolved">RESOLVED</span>
+      <p><strong>#46 Monitor Water Flow</strong> — component SN-WFS-G12 was a back-order risk, confirmed back in stock. Stays on its 16 Sep slot.</p>
+      <span class="badge-risk">SWAPPED OUT</span>
+      <p><strong>3 Blynk tutorials pulled from promotion</strong> (#45 Auth Token, #47 Plant Notification, #35 Gas Detector) — need a full Blynk 2.0 rewrite, not a quick edit. Removed from the launch calendar; the underlying fix becomes a separate, non-launch-blocking maintenance task.</p>
+      <p><strong>Replaced with EDU MY tutorials:</strong> 24 Sep — Indoor Weather Indicator (beginner fit) · 27 Sep — Voice Controlled Smart Window with SinricPro (IoT progression framing) · 28 Sep — open, third tutorial pending.</p>
+    </div>
+
+    <div class="callout">
+      <h3>📦 Getting Started tutorial + box card <span style="font-weight:400; color:var(--muted); font-size:13px;">— Commerce + Purchaser Team</span></h3>
+      <ul>
+        <li>Live tutorial <strong>ahead of schedule</strong> — final polish only (trim length, point last step to R&D's Arduino IDE example for a visible LED/GPIO win)</li>
+        <li>Box card produced in-house style, QR + short link, included inside retail box</li>
+        <li>Print quantity: <strong>600 pcs</strong> (above ~400 unit stock plan)</li>
+        <li>Timeline: 5pcs sample (Wk 1) → bulk 600pcs order (Wk 2) → ~2wk lead → arrival ~6 Sep, ~10 days before launch</li>
+      </ul>
+      <span class="badge-risk">WATCH</span>
+      <p>Buffer is tight, not generous — sample approval must not slip past Week 1 or the bulk order pushes right up against launch.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PHASE 2 ===================== -->
+<section class="phase p2" id="phase2">
+  <div class="phase-inner">
+    <div class="phase-head">
+      <div class="phase-tag">2</div>
+      <h2>Run-up</h2>
+      <div class="phase-dates">2 – 15 Sep</div>
+    </div>
+    <p class="phase-goal">Reveal the product little by little, and give the launch price real runway to build anticipation before the promotion peak.</p>
+
+    <div class="seq-list">
+      <div class="seq-item">
+        <div class="seq-countdown">20 days before</div><div class="seq-date">27 Aug</div>
+        <div class="seq-content"><strong>Teaser — "Something's lighting up soon."</strong><span class="seq-purpose">Curiosity only, no product shown</span></div>
+      </div>
+      <div class="seq-item">
+        <div class="seq-countdown">14 days before</div><div class="seq-date">2 Sep</div>
+        <div class="seq-content"><strong>Customer-problem post</strong><span class="seq-purpose">Names the pain point, still no product</span></div>
+      </div>
+      <div class="seq-item">
+        <div class="seq-countdown">10 days before</div><div class="seq-date">6 Sep</div>
+        <div class="seq-content"><strong>Product page + datasheet accessible + name reveal</strong><span class="seq-purpose">Soft access opens; "Maker ESP32" name lands</span></div>
+      </div>
+      <div class="seq-item">
+        <div class="seq-countdown">7 days before</div><div class="seq-date">9 Sep</div>
+        <div class="seq-content"><strong>Start Faster pillar</strong><span class="seq-purpose">First feature reveal (USB-C, auto-upload)</span></div>
+      </div>
+      <div class="seq-item">
+        <div class="seq-countdown">5 days before</div><div class="seq-date">11 Sep</div>
+        <div class="seq-content"><strong>Understand Better — GPIO demo video + first price tease</strong><span class="seq-purpose">Hero asset + first mention of 20% off</span></div>
+      </div>
+      <div class="seq-item">
+        <div class="seq-countdown">3 days before</div><div class="seq-date">13 Sep</div>
+        <div class="seq-content"><strong>Build Further pillar + Getting Started tutorial live</strong><span class="seq-purpose">Practical readiness content</span></div>
+      </div>
+      <div class="seq-item">
+        <div class="seq-countdown">2 days before</div><div class="seq-date">14 Sep</div>
+        <div class="seq-content"><strong>Full board + tagline reveal</strong><span class="seq-purpose">Full product identity shown</span></div>
+      </div>
+      <div class="seq-item">
+        <div class="seq-countdown">1 day before</div><div class="seq-date">15 Sep</div>
+        <div class="seq-content"><strong>Countdown reminder — "Tomorrow: 20% off, 16–29 Sep"</strong><span class="seq-purpose">Pure price reminder, no CTA live yet</span></div>
+      </div>
+      <div class="seq-item launch">
+        <div class="seq-countdown">🚀 Launch day</div><div class="seq-date">16 Sep</div>
+        <div class="seq-content"><strong>Promotion announcement — banner, page, CTA live everywhere</strong><span class="seq-purpose">Conversion push</span></div>
+      </div>
+    </div>
+
+    <div class="callout" style="margin-top:20px;">
+      <h3>Also in this phase</h3>
+      <ul>
+        <li>Distributors/training partners get final stock confirmation</li>
+        <li>Newsletter #1 scheduled to align with the 16 Sep promotion push</li>
+        <li>Tutorial revamp continues on its existing 1/day publish track</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PHASE 3 ===================== -->
+<section class="phase p3" id="phase3">
+  <div class="phase-inner">
+    <div class="phase-head">
+      <div class="phase-tag">3</div>
+      <h2>Launch Window</h2>
+      <div class="phase-dates">16 – 29 Sep</div>
+    </div>
+    <p class="phase-goal">Coordinated go-live, then two weeks of proof-backed momentum — not just urgency, real evidence the product works.</p>
+
+    <div class="highlight-box">
+      <div>
+        <div class="time">3:00 PM · 16 Sep 2026</div>
+        <div class="desc">Product page + homepage banner go live simultaneously. Coordination owner: <strong>EDU MY</strong> — go/hold call sits with them alone.</div>
+      </div>
+      <span class="status-pill" style="background:rgba(255,255,255,0.25); color:#fff;">Confirmed</span>
+    </div>
+
+    <details class="week" open>
+      <summary>Launch day mechanics <span class="chev">▸</span></summary>
+      <div class="week-body">
+        <div class="item-row"><div class="item-what">Homepage banner — matches existing carousel slide format (headline left, product photo right, CTA pill)</div><div class="item-owner">Marketing Team</div></div>
+        <div class="item-row"><div class="item-what">Countdown timer — post-launch only, 16→29 Sep counting down offer time left (standard practice, not pre-launch hype)</div><div class="item-owner">—</div></div>
+        <div class="item-row"><div class="item-what">All channels fire same day: Facebook, Instagram, Telegram (5 groups), newsletter</div><div class="item-owner">Marketing Team</div></div>
+      </div>
+    </details>
+
+    <details class="week">
+      <summary>Progression content — IoT + FYP <span class="chev">▸</span></summary>
+      <div class="week-body">
+        <table class="mini">
+          <tr><th>Post</th><th>Date</th><th>Centerpiece tutorial</th></tr>
+          <tr><td>IoT progression</td><td>17 Sep</td><td>#28 Smart Home Dashboard</td></tr>
+          <tr><td>FYP progression</td><td>24 Sep</td><td>#33 Smart Weather Station (published launch day, revisited)</td></tr>
+        </table>
+        <p style="font-size:13px; color:var(--muted); margin-top:14px;">Robotics progression dropped — didn't fit naturally. Remaining daily tutorial publishes (incl. #22 Motion Detector Alert, 20 Sep) get a lightweight "new tutorial live" post using the existing card template — no dedicated brief needed.</p>
+      </div>
+    </details>
+
+    <details class="week">
+      <summary>Lecturer cohort shares <span class="chev">▸</span></summary>
+      <div class="week-body">
+        <p class="item-note" style="margin-top:12px;">Organic, not scripted — no fixed ask on <em>how</em> lecturers share, just the objective explained. They're given the datasheet, Getting Started guide, and NodeMCU comparison table. Free board, permanently theirs. Ask is light: verbal class mention (after their own testing) or their own platform, if they have one. Fully lecturer-paced, no synchronized push. <strong>Incentive:</strong> Cytron merchandise as a token of appreciation, details TBC.</p>
+        <div class="message-card">
+          "Hi [Lecturer Name], Maker ESP32 is officially live today. Thank you again for taking the time to test it and share your feedback earlier — it genuinely helped us get this right. No pressure at all, but if you'd like to mention it to your students or share it on your own platform, here's the link: [product page link]. There's a 20% launch discount running until 29 September if that's useful to pass along. Either way, really glad you got to try it early, and thank you for being part of this. — Cytron Technologies"
+        </div>
+      </div>
+    </details>
+
+    <details class="week">
+      <summary>Community funnel + reminders <span class="chev">▸</span></summary>
+      <div class="week-body">
+        <div class="item-row"><div class="item-what"><strong>Tutorial-to-community funnel</strong> — from ~15–21 Sep, every published tutorial includes a CTA into the Telegram ESP32 Community group, growing the audience the mid-window reminder lands in front of</div><div class="item-owner">—</div></div>
+        <div class="item-row"><div class="item-what"><strong>Mid-window reminder (~22–23 Sep)</strong> — urgency + proof: stock momentum (only if genuinely true), new tutorials since launch, lecturer feedback. Scaled back to Telegram · ESP Makers Malaysia only. Visual + text.</div><div class="item-owner">Marketing Team</div></div>
+        <div class="item-row"><div class="item-what"><strong>Final reminder (~27–28 Sep)</strong> — standard visual + caption for FB/IG/Telegram; text-primary for newsletter. Telegram ESP32 Community (383 members) + Newsletter, possibly FB/IG.</div><div class="item-owner">Marketing Team</div></div>
+      </div>
+    </details>
+
+    <details class="week">
+      <summary>Tutorial publishing + monitoring <span class="chev">▸</span></summary>
+      <div class="week-body">
+        <div class="item-row"><div class="item-what">Remaining 15 tutorials roll out 1/day, each with a final check/audit before going live</div><div class="item-owner">Marketing Team</div></div>
+        <div class="item-row"><div class="item-what">Daily monitoring — first-time buyers ask setup/compatibility questions, respond same-day</div><div class="item-owner">Marketing (primary), others informal backup</div></div>
+      </div>
+    </details>
+  </div>
+</section>
+
+<!-- ===================== PHASE 4 ===================== -->
+<section class="phase p4" id="phase4">
+  <div class="phase-inner">
+    <div class="phase-head">
+      <div class="phase-tag">4</div>
+      <h2>Post-launch</h2>
+      <div class="phase-dates">30 Sep onward</div>
+    </div>
+    <p class="phase-goal">Sustain momentum past the discount window and set up the next intake cycle.</p>
+    <span class="status-pill" style="margin-bottom:16px; display:inline-block;">Summary level only — not yet detailed week-by-week</span>
+
+    <div class="callout">
+      <ul>
+        <li>Remove urgency framing — product page goes fully normal/public</li>
+        <li>Included in next regular newsletter roundup</li>
+        <li>Lecturer/student results published as evergreen proof for next intake cycle</li>
+        <li>SG/TH/VN regional rollout begins</li>
+        <li>Review performance (channel, content, lecturer impact) — feeds into planning next semester's push</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<footer>
+  Maker ESP32 Launch Roadmap · Internal planning reference · Cytron Technologies
+</footer>
+
+<script>
+  // Nav + spine click-to-scroll
+  document.querySelectorAll('[data-target]').forEach(el => {
+    el.addEventListener('click', () => {
+      document.getElementById(el.dataset.target).scrollIntoView({behavior:'smooth', block:'start'});
+    });
+  });
+
+  // Scroll spy for nav active state
+  const sections = ['phase1','phase2','phase3','phase4'].map(id => document.getElementById(id));
+  const navButtons = document.querySelectorAll('.nav-links button');
+  const spy = () => {
+    let current = sections[0].id;
+    sections.forEach(sec => {
+      if (window.scrollY >= sec.offsetTop - 120) current = sec.id;
+    });
+    navButtons.forEach(b => b.classList.toggle('active', b.dataset.target === current));
+  };
+  window.addEventListener('scroll', spy);
+  spy();
+
+  // Live countdown to launch
+  const launchDate = new Date('2026-09-16T15:00:00+08:00');
+  function updateCountdown(){
+    const now = new Date();
+    const diff = launchDate - now;
+    const chip = document.getElementById('countdownChip');
+    if (diff <= 0){
+      const offerEnd = new Date('2026-09-29T23:59:59+08:00');
+      if (now <= offerEnd){
+        chip.textContent = "🟢 Launch offer live now";
+      } else {
+        chip.textContent = "Launch complete";
+      }
+      return;
+    }
+    const days = Math.floor(diff / (1000*60*60*24));
+    const hours = Math.floor((diff % (1000*60*60*24)) / (1000*60*60));
+    chip.textContent = `⏳ ${days}d ${hours}h to launch`;
+  }
+  updateCountdown();
+  setInterval(updateCountdown, 60000);
+</script>
+
+</body>
+</html>
